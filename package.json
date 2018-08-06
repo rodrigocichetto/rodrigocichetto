@@ -1,0 +1,19 @@
+{
+  "name": "cichetto",
+  "version": "1.0.0",
+  "description": "My new personal site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigocichetto/cichetto.git"
+  },
+  "author": "Rodrigo Cichetto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigocichetto/cichetto/issues"
+  },
+  "homepage": "https://github.com/rodrigocichetto/cichetto#readme"
+}
