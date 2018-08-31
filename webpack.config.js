@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /*
  * We've enabled MiniCssExtractPlugin for you. This allows your app to
@@ -72,6 +73,10 @@ module.exports = {
 			}
 		]
 	},
+
+	plugins: [
+		new HtmlWebpackPlugin({ template: 'src/index.html' })
+	],
 
 	mode: 'production',
 
