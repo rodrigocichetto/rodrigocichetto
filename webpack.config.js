@@ -46,10 +46,12 @@ module.exports = {
 					]
 				},
 
-				test: /\.js$/
+				test: /\.js$/,
+				exclude: /node_modules/,
 			},
 			{
 				test: /\.(scss|css)$/,
+				exclude: /node_modules/,
 
 				use: [
 					{
@@ -75,7 +77,10 @@ module.exports = {
 	},
 
 	plugins: [
-		new HtmlWebpackPlugin({ template: 'src/index.html' })
+		new HtmlWebpackPlugin({ template: 'src/index.html' }),
+		new MiniCssExtractPlugin({
+			filename: `styles/build.css`
+		})
 	],
 
 	mode: 'production',
@@ -94,5 +99,10 @@ module.exports = {
 			minSize: 30000,
 			name: false
 		}
+	},
+
+	devServer: {
+		watchContentBase: true,
+		compress: true
 	}
 };

@@ -21,7 +21,7 @@
     "webpack-dev-server": "^3.1.7"
   },
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --config webpack.config.js --hot --inline",
+    "start": "./node_modules/.bin/webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
