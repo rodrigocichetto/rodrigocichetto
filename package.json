@@ -1,8 +1,8 @@
 {
   "name": "cichetto",
   "version": "1.0.0",
-  "description": "My new personal site",
-  "main": "index.js",
+  "description": "My personal site",
+  "main": "src/index.js",
   "dependencies": {},
   "devDependencies": {
     "@webpack-cli/init": "^0.1.0",
@@ -10,8 +10,13 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.28.11",
+    "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-webpack-plugin": "^2.2.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.1",
@@ -28,7 +33,7 @@
     "type": "git",
     "url": "git+https://github.com/rodrigocichetto/cichetto.git"
   },
-  "author": "",
+  "author": "Rodrigo Cichetto",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rodrigocichetto/cichetto/issues"

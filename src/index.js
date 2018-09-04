@@ -1,7 +1,8 @@
 import "./styles/main.scss"
 
-class App {
-
+export default class App {
+    constructor() {
+    }
 }
 
-export default App
+const app = new App()

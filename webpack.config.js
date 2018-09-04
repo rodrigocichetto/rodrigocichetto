@@ -1,6 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 /*
  * We've enabled MiniCssExtractPlugin for you. This allows your app to
@@ -68,18 +72,43 @@ module.exports = {
 						loader: 'sass-loader',
 
 						options: {
-							sourceMap: true
+							sourceMap: true,
+							outputStyle: 'compressed'
 						}
 					}
 				]
+			},
+			{
+				test: /\.(jpg|jpe?g|png|gif|svg)$/i,
+				use: {
+					loader: 'file-loader',
+					options: {
+						useRelativePath: true,
+						name: `[name].[ext]`
+					}
+				}
 			}
 		]
 	},
 
 	plugins: [
+		new CleanWebpackPlugin(['dist']),
 		new HtmlWebpackPlugin({ template: 'src/index.html' }),
 		new MiniCssExtractPlugin({
 			filename: `styles/build.css`
+		}),
+		new CopyWebpackPlugin([{
+			from: 'src/assets/',
+			to: `assets/`
+		}]),
+		new ImageminPlugin({ 
+			test: /\.(jpg|jpe?g|png|gif|svg)$/i,
+			plugins: [
+				imageminMozjpeg({
+					quality: 90,
+					progressive: true
+				})
+			]
 		})
 	],
 
@@ -99,10 +128,5 @@ module.exports = {
 			minSize: 30000,
 			name: false
 		}
-	},
-
-	devServer: {
-		watchContentBase: true,
-		compress: true
 	}
 };
