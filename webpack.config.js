@@ -51,11 +51,9 @@ module.exports = {
 				},
 
 				test: /\.js$/,
-				exclude: /node_modules/,
 			},
 			{
 				test: /\.(scss|css)$/,
-				exclude: /node_modules/,
 
 				use: [
 					{
@@ -79,7 +77,23 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(jpg|jpe?g|png|gif|svg)$/i,
+				test: /.*fontawesome.*\.(ttf|woff|woff2|eot|svg)$/i,
+				use: {
+					loader: 'url-loader'
+				}
+			},
+			// {
+			// 	test: /\.(ttf|woff|woff2|eot)$/i,
+			// 	use: {
+			// 		loader: 'file-loader',
+			// 		options: {
+			// 			useRelativePath: true,
+			// 			name: `[name].[ext]`
+			// 		}
+			// 	}
+			// },
+			{
+				test: /^((?!fontawesome).)*\.(jpg|jpe?g|png|gif|svg|ico)$/i,
 				use: {
 					loader: 'file-loader',
 					options: {
@@ -92,7 +106,9 @@ module.exports = {
 	},
 
 	plugins: [
-		new CleanWebpackPlugin(['dist']),
+		new CleanWebpackPlugin(['dist'], {
+			beforeEmit :  true
+		}),
 		new HtmlWebpackPlugin({ template: 'src/index.html' }),
 		new MiniCssExtractPlugin({
 			filename: `styles/build.css`
@@ -102,7 +118,7 @@ module.exports = {
 			to: `assets/`
 		}]),
 		new ImageminPlugin({ 
-			test: /\.(jpg|jpe?g|png|gif|svg)$/i,
+			test: /\.(jpg|jpe?g|png|gif|svg|ico)$/i,
 			plugins: [
 				imageminMozjpeg({
 					quality: 90,

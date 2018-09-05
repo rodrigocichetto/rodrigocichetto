@@ -1,6 +1,50 @@
 .info {
     z-index: 2;
     .rodrigocichetto {
-        border-radius: 50%;
+        color: $light-color;
+        @include flex-box-center();
+        .picture {
+            width: 150px;
+            border: 0.2rem solid rgba($light-color, 0.5);
+            box-shadow: 0px 1px 5px 0px rgba(#000, 0.75);
+            border-radius: 50%;
+        }
+        .personal-info {
+            margin-left: 1rem;
+            h1 {
+                margin-bottom: 0;
+            }
+            .typed {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .links {
+        margin-top: 2rem;
+        text-align: center;
+        @include flex-box-center();
+        .link {
+            float: left;
+            width: 4rem;
+            height: 4rem;
+            margin: 0 0.5rem;
+            color: $light-color;
+            border: 0.1rem solid $light-color;
+            border-radius: 0.5rem;
+            font-size: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            @include flex-box-center();
+            &:hover {
+                background: $light-color;
+                color: $black-color;
+            }
+        }
+        .bar {
+            float: left;
+            width: 0.1rem;
+            height: 5rem;
+            background: $light-color;
+        }
     }
 }
