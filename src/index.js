@@ -21,8 +21,12 @@ export default class App {
         this.linksDev = document.querySelectorAll('.link-dev')
         this.linksPhotographer = document.querySelectorAll('.link-photographer')
         this.body = document.querySelector('body')
+        // After Load
         this.rlBgDev = document.querySelector('#bg-dev--rl')
+        this.rlBgMedium = document.querySelector('#bg-medium--rl')
         this.rlBgPhotographer = document.querySelector('#bg-photographer--rl')
+        this.rlFavDev = document.querySelector('#fav-dev--rl')
+        this.rlFavPhotographer = document.querySelector('#fav-photographer--rl')
     }
 
     initComponents() {
@@ -75,9 +79,13 @@ export default class App {
         )
     }
 
-    updateToDev() {
+    updateToDev(el) {
         this.body.classList.add('bg-dev')
         this.changeFavicon('assets/favicon-dev.ico')
+        if (el.currentTarget.dataset.bg) {
+            this.changeBackground(el.currentTarget.dataset.bg)    
+            return
+        }
         this.changeBackground('bg-dev')
     }
 
@@ -88,15 +96,21 @@ export default class App {
         )
     }
 
-    updateToPhotographer() {
+    updateToPhotographer(el) {
         this.body.classList.add('bg-photographer')
         this.changeFavicon('assets/favicon-photographer.ico')
-        // this.changeBackground('bg-photographer')
+        if (el.currentTarget.dataset.bg) {
+            this.changeBackground(el.currentTarget.dataset.bg)    
+            return
+        }
+        this.changeBackground('bg-photographer')
     }
 
     // ReadyLoad
     readyLoad() {
         this.rlBgDev.classList.add('bg-dev')
+        this.rlBgMedium.classList.add('bg-medium')
+        this.rlBgPhotographer.classList.add('bg-photographer')
     }
 }
 
