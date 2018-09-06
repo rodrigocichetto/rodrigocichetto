@@ -1,0 +1,14 @@
+.bg-image {
+    background-position: center;
+    // background-repeat: no-repeat;
+    background-size: cover;
+    transition-duration: 0s;
+    transition: background-image 0.3s ease-in-out;
+    .overlay {
+        background:rgba($overlay-color, 0.4);
+    }
+}
+
+.bg-dev {
+    background-image: url('../assets/bg-dev.png');
+}

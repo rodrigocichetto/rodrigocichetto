@@ -5,30 +5,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-/*
- * We've enabled MiniCssExtractPlugin for you. This allows your app to
- * use css modules that will be moved into a separate CSS file instead of inside
- * one of your module entries!
- *
- * https://github.com/webpack-contrib/mini-css-extract-plugin
- *
- */
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-/*
- * SplitChunksPlugin is enabled by default and replaced
- * deprecated CommonsChunkPlugin. It automatically identifies modules which
- * should be splitted of chunk by heuristics using module duplication count and
- * module category (i. e. node_modules). And splits the chunks…
- *
- * It is safe to remove "splitChunks" from the generated configuration
- * and was added as an educational example.
- *
- * https://webpack.js.org/plugins/split-chunks-plugin/
- *
- */
 
 module.exports = {
 	module: {
@@ -94,19 +71,26 @@ module.exports = {
 			// },
 			{
 				test: /^((?!fontawesome).)*\.(jpg|jpe?g|png|gif|svg|ico)$/i,
-				use: {
-					loader: 'file-loader',
-					options: {
-						useRelativePath: true,
-						name: `[name].[ext]`
+				use: [
+					// {
+					// 	loader: 'url-loader'
+					// },
+					{
+						loader: 'file-loader',
+						options: {
+							useRelativePath: true,
+							publicPath: '../assets/',
+							name: `[name].[ext]`
+						}
 					}
-				}
+				]
 			}
 		]
 	},
 
 	plugins: [
 		new CleanWebpackPlugin(['dist'], {
+			dry: true,
 			beforeEmit :  true
 		}),
 		new HtmlWebpackPlugin({ template: 'src/index.html' }),
@@ -121,10 +105,13 @@ module.exports = {
 			test: /\.(jpg|jpe?g|png|gif|svg|ico)$/i,
 			plugins: [
 				imageminMozjpeg({
-					quality: 90,
+					quality: 70,
 					progressive: true
 				})
-			]
+			],
+			pngquant: {
+				quality: '80'
+			}
 		})
 	],
 

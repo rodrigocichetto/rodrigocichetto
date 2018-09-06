@@ -10,14 +10,19 @@ export default class App {
         this.getElements()
         this.initComponents()
         this.addEvents()
+        window.onload = this.readyLoad.bind(this)
     }
 
     getElements() {
         this.favicon = document.querySelector('#favicon')
         this.typed = document.querySelector('.typed')
+        this.bg = document.querySelector('.bg')
         this.links = document.querySelectorAll('.link')
         this.linksDev = document.querySelectorAll('.link-dev')
         this.linksPhotographer = document.querySelectorAll('.link-photographer')
+        this.body = document.querySelector('body')
+        this.rlBgDev = document.querySelector('#bg-dev--rl')
+        this.rlBgPhotographer = document.querySelector('#bg-photographer--rl')
     }
 
     initComponents() {
@@ -43,6 +48,11 @@ export default class App {
         this.favicon.setAttribute('href', favico)
     }
 
+    changeBackground(cssClass) {
+        cssClass = cssClass ? `bg bg-image ${cssClass}` : 'bg'
+        this.bg.setAttribute('class', cssClass)
+    }
+
     // Default
     linksActions() {
         Rx.DOM.mouseout(this.links).subscribe(
@@ -51,7 +61,11 @@ export default class App {
     }
 
     updateToDefault() {
+        // this.body.classList.remove(/bg-\w+/g)
+        this.body.classList.remove('bg-dev')
+        this.body.classList.remove('bg-photographer')
         this.changeFavicon('assets/favicon.ico')
+        this.changeBackground()
     }
 
     // Dev
@@ -62,7 +76,9 @@ export default class App {
     }
 
     updateToDev() {
+        this.body.classList.add('bg-dev')
         this.changeFavicon('assets/favicon-dev.ico')
+        this.changeBackground('bg-dev')
     }
 
     // Photographer
@@ -73,7 +89,14 @@ export default class App {
     }
 
     updateToPhotographer() {
+        this.body.classList.add('bg-photographer')
         this.changeFavicon('assets/favicon-photographer.ico')
+        // this.changeBackground('bg-photographer')
+    }
+
+    // ReadyLoad
+    readyLoad() {
+        this.rlBgDev.classList.add('bg-dev')
     }
 }
 

@@ -17,14 +17,17 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('/assets/bg-programming.png');
+    background-image: url('../assets/bg-default.jpg');
+    background-repeat: repeat;
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    transition-duration: 0s;
     z-index: 1;
+    .overlay {
+        height: 100%;
+        background:rgba($overlay-color, 0.2);
+    }
 }
 
-.overlay {
-    height: 100%;
-    background:rgba(#333, 0.5);
+.ready-load {
+    display: none;
 }
