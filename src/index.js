@@ -25,6 +25,7 @@ export default class App {
         this.rlBgDev = document.querySelector('#bg-dev--rl')
         this.rlBgMedium = document.querySelector('#bg-medium--rl')
         this.rlBgPhotographer = document.querySelector('#bg-photographer--rl')
+        this.rlBgInstagram = document.querySelector('#bg-instagram--rl')
         this.rlFavDev = document.querySelector('#fav-dev--rl')
         this.rlFavPhotographer = document.querySelector('#fav-photographer--rl')
     }
@@ -111,6 +112,7 @@ export default class App {
         this.rlBgDev.classList.add('bg-dev')
         this.rlBgMedium.classList.add('bg-medium')
         this.rlBgPhotographer.classList.add('bg-photographer')
+        this.rlBgInstagram.classList.add('bg-instagram')
     }
 }
 
