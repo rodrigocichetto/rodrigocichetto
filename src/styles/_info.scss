@@ -2,7 +2,8 @@
     z-index: 2;
     .rodrigocichetto {
         color: $light-color;
-        @include flex-box-center();
+        display: block;
+        text-align: center;
         .picture {
             width: 150px;
             border: 0.2rem solid rgba($light-color, 0.5);
@@ -26,15 +27,15 @@
         @include flex-box-center();
         .link {
             float: left;
-            width: 4rem;
-            height: 4rem;
-            margin: 0 0.5rem;
+            width: 3rem;
+            height: 3rem;
+            margin: 0 0.4rem;
             color: $light-color;
             border: 0.1rem solid $light-color;
             border-radius: 0.5rem;
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-decoration: none;
-            transition: all 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
             @include flex-box-center();
             &:hover {
                 background: $light-color;
@@ -44,8 +45,28 @@
         .bar {
             float: left;
             width: 0.1rem;
-            height: 5rem;
+            height: 4rem;
             background: $light-color;
+        }
+    }
+}
+
+@media (min-width: $size-sm) {
+    .info {
+        .rodrigocichetto {
+            text-align: left;
+            @include flex-box-center();
+        }
+        .links {
+            .link {
+                width: 4rem;
+                height: 4rem;
+                font-size: 2rem;
+                margin: 0 0.5rem;
+            }
+            .bar {
+                height: 5rem;
+            }
         }
     }
 }
