@@ -36,7 +36,7 @@
     "start": "./node_modules/.bin/webpack-dev-server -d",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run predeploy && gh-pages -d dist"
   },
   "repository": {
     "type": "git",

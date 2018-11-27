@@ -59,22 +59,9 @@ module.exports = {
 					loader: 'url-loader'
 				}
 			},
-			// {
-			// 	test: /\.(ttf|woff|woff2|eot)$/i,
-			// 	use: {
-			// 		loader: 'file-loader',
-			// 		options: {
-			// 			useRelativePath: true,
-			// 			name: `[name].[ext]`
-			// 		}
-			// 	}
-			// },
 			{
 				test: /^((?!fontawesome).)*\.(jpg|jpe?g|png|gif|svg|ico)$/i,
 				use: [
-					// {
-					// 	loader: 'url-loader'
-					// },
 					{
 						loader: 'file-loader',
 						options: {
@@ -90,17 +77,23 @@ module.exports = {
 
 	plugins: [
 		new CleanWebpackPlugin(['dist'], {
-			dry: true,
+			// dry: true,
 			beforeEmit :  true
 		}),
 		new HtmlWebpackPlugin({ template: 'src/index.html' }),
 		new MiniCssExtractPlugin({
 			filename: `styles/build.css`
 		}),
-		new CopyWebpackPlugin([{
-			from: 'src/assets/',
-			to: `assets/`
-		}]),
+		new CopyWebpackPlugin([
+			{
+				from: 'src/assets/',
+				to: `assets/`
+			}, 
+			{
+				from: 'src/CNAME', 
+				to: '.'
+			}
+		]),
 		new ImageminPlugin({ 
 			test: /\.(jpg|jpe?g|png|gif|svg|ico)$/i,
 			plugins: [
