@@ -7,12 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link id="favicon" rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
 
-    <meta name="description" content="Desenvolvedor Front-end e Fotógrafo - Araraquara / SP" />
-    <meta name="keywords" content="desenvolvedor, dev, fotografo, fotografia, rodrigo, cichetto, photography, front-end, araraquara,"/>
+    <!-- Loader -->
+    <style>
+        .hidden {
+            display: none !important;
+        }
+        .loader {
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+        }
+        .loader:after {
+            content: " ";
+            display: block;
+            width: 46px;
+            height: 46px;
+            margin: 1px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+
+    <!-- Social -->
+    <meta name="description" content="Desenvolvedor Front-end &#x1F468;&#x1F4BB; formado em Ciência da Computação, Fotógrafo &#x1F4F7;, Gamer &#x1F3AE; e de vez em quando gravo alguns vídeos. Rodrigo Cichetto - Araraquara / SP" />
+    <meta name="keywords" content="desenvolvedor, dev, fotografo, fotografia, rodrigo, cichetto, photography, front-end, araraquara, vídeo,"/>
     <meta name="robots" content="index, follow">
+    <meta property="og:url" content="http://www.cichetto.com.br/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rodrigo Cichetto - Fotógrafo e Dev Front-end" />
+    <meta property="og:description" content="Desenvolvedor Front-end &#x1F468;&#x1F4BB; formado em Ciência da Computação, Fotógrafo &#x1F4F7;, Gamer &#x1F3AE; e de vez em quando gravo alguns vídeos. Rodrigo Cichetto - Araraquara / SP" />
+    <meta property="og:image" content="http://www.cichetto.com.br/assets/social-share.jpg" />
 </head>
 <body>
-    <div class="info">
+    <div class="loader"></div>
+    <div class="info hidden">
         <div class="rodrigocichetto">
             <img class="picture" src="assets/rodrigocichetto-default.jpg" alt="Rodrigo Cichetto">
             <div class="personal-info">
@@ -28,6 +69,7 @@
             <span class="bar"></span>
             <a id="500px" class="link link-photographer" href="https://500px.com/rodrigocichetto/" target="_blank" title="500px"><i class="fab fa-500px"></i></a>
             <a id="instagram" data-bg="bg-instagram" class="link link-photographer" href="https://www.instagram.com/rodrigocichetto/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a id="facebook" data-bg="bg-facebook" class="link link-photographer" href="https://www.facebook.com/rodrigocichettophotography/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
         </div>
     </div>
     <div class="bg">
@@ -35,10 +77,12 @@
     </div>
 
     <div class="after-ready-load">
+        <img id="picture-photographer--rl" class="ready-load">
         <div id="bg-dev--rl" class="ready-load"></div>
         <div id="bg-medium--rl" class="ready-load"></div>
         <div id="bg-photographer--rl" class="ready-load"></div>
         <div id="bg-instagram--rl" class="ready-load"></div>
+        <div id="bg-facebook--rl" class="ready-load"></div>
     </div>
 </body>
 </html>

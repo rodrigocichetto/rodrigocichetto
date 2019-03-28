@@ -11,6 +11,9 @@
 
 .bg-dev {
     background-image: url('../assets/bg-dev.png');
+    &--mobile {
+        background-position: 68%;
+    }
 }
 
 .bg-photographer {
@@ -23,4 +26,31 @@
 
 .bg-instagram {
     background-image: url('../assets/bg-instagram.jpg');
+    &--mobile {
+        background-position: 70% 10%;
+    }
+}
+
+.bg-facebook {
+    background-image: url('../assets/bg-facebook.jpg');
+    &--mobile {
+        background-position: 47%;
+    }
+}
+
+.scale-animation {
+    transition: all 0.3s ease-in-out;
+    animation: scale 1s ease alternate;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    90% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.08);
+    }
 }
