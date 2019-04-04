@@ -161,7 +161,7 @@ export default class App {
         this.rlBgMedium.classList.add('bg-medium')
         this.rlBgPhotographer.classList.add('bg-photographer')
         this.rlBgInstagram.classList.add('bg-instagram')
-        this.rlBgInstagram.classList.add('bg-facebook')
+        this.rlBgFacebook.classList.add('bg-facebook')
     }
 }
 
