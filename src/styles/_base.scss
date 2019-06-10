@@ -12,11 +12,12 @@ body {
     box-sizing: border-box;
     @include flex-box-center();
     font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 
 .cursor {
-    width: 20px;
-    height: 20px;
+    width: 0.9em;
+    height: 0.9em;
     background: rgba($black-color, 0.9);
     // border: 1px solid white;
     border-radius: 50%;
@@ -25,18 +26,20 @@ body {
     z-index: 99;
     &:after {
         content: "";
-        width: 20px;
-        height: 20px;
+        width: 0.9em;
+        height: 0.9em;
         position: absolute;
         border-radius: 50%;
         background: $black-color;
         opacity: .5;
+        overflow: visible;
+        transform: scale(1);
     }
     &.is-hover:after {
         animation: cursorAnim 1s forwards;
     }
     &.is-hovered:after {
-        animation: cursorAnim 1s reverse forwards;
+        animation: cursorAnimOut 1s forwards;
     }
 }
 

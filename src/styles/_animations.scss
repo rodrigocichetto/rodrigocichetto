@@ -3,7 +3,16 @@
         transform: scale(1);
     }
     to {
-        transform: scale(4);
+        transform: scale(2);
+    }
+}
+
+@keyframes cursorAnimOut {
+    from {
+        transform: scale(2);
+    }
+    to {
+        transform: scale(1);
     }
 }
 
