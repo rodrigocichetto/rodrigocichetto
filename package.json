@@ -5,8 +5,9 @@
   "main": "src/index.js",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",
-    "rx-dom": "^7.0.3",
-    "typed.js": "^2.0.9"
+    "typed.js": "^2.0.9",
+    "tilt.js": "^1.2.1",
+    "jquery": "^3.4.1"
   },
   "devDependencies": {
     "@webpack-cli/init": "^0.1.0",

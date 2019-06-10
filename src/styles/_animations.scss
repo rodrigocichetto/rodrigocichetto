@@ -1,0 +1,43 @@
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(4);
+    }
+}
+
+@keyframes colorBgMove {
+    0% {
+        background-position: 0% 50%;
+        filter: blur($minBlur);
+    }
+    10% {
+        filter: blur($maxBlur);
+    }
+    15% {
+        filter: blur($maxBlur);
+    }
+    25% {
+        filter: blur($minBlur);
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    60% {
+        filter: blur($minBlur);
+    }
+    70% {
+        filter: blur($maxBlur);
+    }
+    75% {
+        filter: blur($maxBlur);
+    }
+    85% {
+        filter: blur($minBlur);
+    }
+    100% {
+        background-position: 0% 50%;
+        filter: blur($minBlur);
+    }
+}

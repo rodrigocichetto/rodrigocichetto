@@ -2,8 +2,9 @@ import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import '@fortawesome/fontawesome-free/css/brands.min.css'
 import './styles/main.scss'
 
+import $ from 'jquery'
 import Typed from 'typed.js'
-import Rx from 'rx-dom'
+import tilt from 'tilt.js'
 
 export default class App {
     constructor() {
@@ -20,23 +21,25 @@ export default class App {
     }
 
     getElements() {
-        this.favicon = document.querySelector('#favicon')
+        this.cursor = $('.cursor')
+        this.favicon = $('#favicon')
+        this.info = $('.info')
         this.typed = document.querySelector('.typed')
-        this.picture = document.querySelector('.picture')
-        this.bg = document.querySelector('.bg')
-        this.links = document.querySelectorAll('.link')
-        this.linksDev = document.querySelectorAll('.link-dev')
-        this.linksPhotographer = document.querySelectorAll('.link-photographer')
-        this.body = document.querySelector('body')
+        this.picture = $('.picture')
+        this.bg = $('.bg')
+        this.links = $('.link')
+        this.linksDev = $('.link-dev')
+        this.linksPhotographer = $('.link-photographer')
+        this.body = $('body')
         // After Load
-        this.rlPicPhotographer = document.querySelector('#picture-photographer--rl')
-        this.rlBgDev = document.querySelector('#bg-dev--rl')
-        this.rlBgMedium = document.querySelector('#bg-medium--rl')
-        this.rlBgPhotographer = document.querySelector('#bg-photographer--rl')
-        this.rlBgInstagram = document.querySelector('#bg-instagram--rl')
-        this.rlBgFacebook = document.querySelector('#bg-facebook--rl')
-        this.rlFavDev = document.querySelector('#fav-dev--rl')
-        this.rlFavPhotographer = document.querySelector('#fav-photographer--rl')
+        this.rlPicPhotographer = $('#picture-photographer--rl')
+        this.rlBgDev = $('#bg-dev--rl')
+        this.rlBgMedium = $('#bg-medium--rl')
+        this.rlBgPhotographer = $('#bg-photographer--rl')
+        this.rlBgInstagram = $('#bg-instagram--rl')
+        this.rlBgFacebook = $('#bg-facebook--rl')
+        this.rlFavDev = $('#fav-dev--rl')
+        this.rlFavPhotographer = $('#fav-photographer--rl')
     }
 
     initComponents() {
@@ -50,39 +53,63 @@ export default class App {
             typeSpeed: 50,
             backDelay: 1500
         })
+        this.info.tilt({maxTilt: 3})
     }
     
     addEvents() {
+        this.linkCursor()
+        this.linkCursorHover()
         this.linksActions()
         this.linksDevActions()
         this.linksPhotographerActions()
     }
 
+    linkCursor() {
+        $('html').on('mousemove', this.updateCursor.bind(this))
+    }
+
+    updateCursor(e) {
+        this.cursor.attr("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+    }
+
+    linkCursorHover() {
+        $('a').on('mouseover', this.updateCursorHover.bind(this))
+        $('a').on('mouseout', this.updateCursorHover.bind(this))
+    }
+
+    updateCursorHover(e) {
+        if (e.type == 'mouseover') {
+            this.cursor.removeClass('is-hovered')
+            this.cursor.addClass('is-hover')
+            return
+        }
+        this.cursor.removeClass('is-hover')
+        this.cursor.addClass('is-hovered')
+    }
+
     exitLoader() {
-        document.querySelector('.loader').classList.add('hidden')
-        document.querySelector('.info').classList.remove('hidden')
+        $('.loader').addClass('hidden')
+        $('.info').removeClass('hidden')
     }
 
     changeFavicon(favico) {
-        this.favicon.setAttribute('href', favico)
+        this.favicon.attr('href', favico)
     }
 
     changeBackground(cssClass) {
         cssClass = cssClass ? `bg bg-image ${cssClass}` : 'bg'
-        this.bg.setAttribute('class', cssClass)
+        this.bg.attr('class', cssClass)
     }
 
     // Default
     linksActions() {
-        Rx.DOM.mouseout(this.links).subscribe(
-            this.updateToDefault.bind(this)
-        )
+        this.links.on('mouseout', this.updateToDefault.bind(this))
     }
 
     updateToDefault() {
-        // this.body.classList.remove(/bg-\w+/g)
-        this.body.classList.remove('bg-dev')
-        this.body.classList.remove('bg-photographer')
+        // this.body.removeClass(/bg-\w+/g)
+        this.body.removeClass('bg-dev')
+        this.body.removeClass('bg-photographer')
         this.picture.src = 'assets/rodrigocichetto-default.jpg'
         this.changeFavicon('assets/favicon.ico')
         this.changeBackground()
@@ -90,13 +117,11 @@ export default class App {
 
     // Dev
     linksDevActions() {
-        Rx.DOM.mouseover(this.linksDev).subscribe(
-            this.updateToDev.bind(this)
-        )
+        this.linksDev.on('mouseover', this.updateToDev.bind(this))
     }
 
     updateToDev(el) {
-        this.body.classList.add('bg-dev')
+        this.body.addClass('bg-dev')
         this.changeFavicon('assets/favicon-dev.ico')
         if (el.currentTarget.dataset.bg) {
             this.changeBackground(el.currentTarget.dataset.bg)    
@@ -107,13 +132,11 @@ export default class App {
 
     // Photographer
     linksPhotographerActions() {
-        Rx.DOM.mouseover(this.linksPhotographer).subscribe(
-            this.updateToPhotographer.bind(this)
-        )
+        this.linksPhotographer.on('mouseover', this.updateToPhotographer.bind(this))
     }
 
     updateToPhotographer(el) {
-        this.body.classList.add('bg-photographer')
+        this.body.addClass('bg-photographer')
         this.picture.src = 'assets/rodrigocichetto-photo.jpg'
         this.changeFavicon('assets/favicon-photographer.ico')
         if (el.currentTarget.dataset.bg) {
@@ -141,12 +164,12 @@ export default class App {
         }
         let cssClass = this.backgrounds[Math.floor(Math.random() * this.backgrounds.length)]
         this.backgrounds.splice(this.backgrounds.indexOf(cssClass), 1)
-        this.bg.setAttribute('class', `bg bg-image ${cssClass} ${cssClass}--mobile`)
+        this.bg.attr('class', `bg bg-image ${cssClass} ${cssClass}--mobile`)
     }
 
     changePicture() {
-        setTimeout(() => this.picture.classList.remove('scale-animation'), 1000)
-        this.picture.classList.add('scale-animation')
+        setTimeout(() => this.picture.removeClass('scale-animation'), 1000)
+        this.picture.addClass('scale-animation')
         if (this.picture.src.indexOf('default') != -1) {
             this.picture.src = 'assets/rodrigocichetto-photo.jpg'
             return
@@ -157,11 +180,11 @@ export default class App {
     // ReadyLoad
     readyLoad() {
         this.rlPicPhotographer.src = 'assets/rodrigocichetto-photo.jpg'
-        this.rlBgDev.classList.add('bg-dev')
-        this.rlBgMedium.classList.add('bg-medium')
-        this.rlBgPhotographer.classList.add('bg-photographer')
-        this.rlBgInstagram.classList.add('bg-instagram')
-        this.rlBgFacebook.classList.add('bg-facebook')
+        this.rlBgDev.addClass('bg-dev')
+        this.rlBgMedium.addClass('bg-medium')
+        this.rlBgPhotographer.addClass('bg-photographer')
+        this.rlBgInstagram.addClass('bg-instagram')
+        this.rlBgFacebook.addClass('bg-facebook')
     }
 }
 
