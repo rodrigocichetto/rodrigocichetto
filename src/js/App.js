@@ -125,7 +125,10 @@ export default class App {
     }
 
     changeBackground(cssClass) {
-        cssClass = cssClass ? `bg bg-image ${cssClass}` : 'bg'
+        if(this.bg.hasClass('bg-in')) {
+            return
+        }
+        cssClass = cssClass ? `bg bg-image bg-in ${cssClass}` : 'bg'
         this.bg.attr('class', cssClass)
     }
 
@@ -137,6 +140,7 @@ export default class App {
     updateToDefault() {
         this.picture.src = 'assets/rodrigocichetto-default.jpg'
         this.changeFavicon('assets/favicon.ico')
+        this.bg.removeClass('bg-in')
         this.bg.addClass('bg-out')
         setTimeout(this.changeBackground.bind(this), 500)
     }
@@ -147,6 +151,7 @@ export default class App {
     }
 
     updateToDev(el) {
+        // this.bg.removeClass('bg-out')
         this.changeFavicon('assets/favicon-dev.ico')
         if (el.currentTarget.dataset.bg) {
             this.changeBackground(el.currentTarget.dataset.bg)    
@@ -161,6 +166,7 @@ export default class App {
     }
 
     updateToPhotographer(el) {
+        // this.bg.removeClass('bg-out')
         this.picture.src = 'assets/rodrigocichetto-photo.jpg'
         this.changeFavicon('assets/favicon-photographer.ico')
         if (el.currentTarget.dataset.bg) {

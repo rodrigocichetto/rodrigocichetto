@@ -13,8 +13,8 @@ body {
     @include flex-box-center();
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
-    background: $blue-2-color;  /* fallback for old browsers */
-    background: linear-gradient(to right,$blue-2-color, $blue-color);
+    background: $sky-blue;  /* fallback for old browsers */
+    background: linear-gradient(to right,$sky-blue, $eastern-blue);
 }
 
 .cursor {

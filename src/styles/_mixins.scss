@@ -15,5 +15,8 @@
 }
 
 @mixin animateBg() {
-    animation: bgAnim .5s ease-in-out forwards;
+    // animation: bgAnim .5s ease-in-out forwards;
+    // &.bg-out {
+    //     animation: bgAnimOut .5s ease-in-out forwards;
+    // }
 }

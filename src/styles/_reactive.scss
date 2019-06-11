@@ -1,5 +1,10 @@
-.bg-out {
-    animation: bgAnimOut .5s ease-in-out forwards !important;
+.bg {
+    &-in {
+        animation: bgAnim .5s ease-in-out forwards;
+    }
+    &-out {
+        animation: bgAnimOut .5s ease-in-out forwards;
+    }
 }
 
 .bg-image {
