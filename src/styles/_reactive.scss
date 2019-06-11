@@ -1,16 +1,21 @@
+.bg-out {
+    animation: bgAnimOut .5s ease-in-out forwards !important;
+}
+
 .bg-image {
     background-position: center;
     // background-repeat: no-repeat;
     background-size: cover;
     transition-duration: 0s;
     transition: background-image 0.3s ease-in-out;
-    .overlay {
-        background:rgba($overlay-color, 0.4);
-    }
+    // &--out {
+    //     animation: bgAnimOut .5s ease-in-out;
+    // }
 }
 
 .bg-dev {
     background-image: url('../assets/bg-dev.png');
+    @include animateBg();
     &--mobile {
         background-position: 68%;
     }
@@ -18,14 +23,17 @@
 
 .bg-photographer {
     background-image: url('../assets/bg-photographer.jpg');
+    @include animateBg();
 }
 
 .bg-medium {
     background-image: url('../assets/bg-medium.jpg');
+    @include animateBg();
 }
 
 .bg-instagram {
     background-image: url('../assets/bg-instagram.jpg');
+    @include animateBg();
     &--mobile {
         background-position: 70% 10%;
     }
@@ -33,6 +41,7 @@
 
 .bg-facebook {
     background-image: url('../assets/bg-facebook.jpg');
+    @include animateBg();
     &--mobile {
         background-position: 47%;
     }
@@ -40,17 +49,5 @@
 
 .scale-animation {
     transition: all 0.3s ease-in-out;
-    animation: scale 1s ease alternate;
-}
-
-@keyframes scale {
-    0% {
-        transform: scale(1);
-    }
-    90% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1.08);
-    }
+    animation: scaleAnim 1s ease alternate;
 }

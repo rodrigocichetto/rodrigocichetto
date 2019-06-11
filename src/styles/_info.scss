@@ -1,43 +1,43 @@
 .info {
     z-index: 2;
-    min-width: 40em;
+    width: 100%;
+    margin: 1em;
     padding: 0 2em 2em;
-    background: $light-color;
+    background: rgba($light-color, 0.9);
     border-radius: 1.2em;
     display: flex;
     flex-direction: column;
     transform-style: preserve-3d;
     .rodrigocichetto {
-        margin-top: -3em;
+        margin-top: -2em;
         transform: translateZ(3em);
+        text-align: center;
         .picture {
             width: 100px;
             border: 0.2rem solid rgba($light-color, 0.5);
-            // box-shadow: 0px 1px 5px 0px rgba(#000, 0.75);
             box-shadow: 0px 5px 50px 0px $blue-color, 0px 0px 0px 7px rgba(darken($blue-color, 7%), 0.5);
             border-radius: 50%;
         }
     }
     .personal-info {
+        text-align: center;
+        margin: 1em 0 0;
         display: flex;
         flex-direction: column;
         font-family: "Roboto", sans-serif;
         transform: translateZ(2.5em);
         span {
             text-align: center;
-            font-size: 4em;
-            padding: 0 1em 0 0;
-            // line-height: 7em;
-            letter-spacing: -5px;
-            font-weight: 800 !important;
+            font-size: 2em;
+            font-weight: 800;
             background: linear-gradient(
                 to left,
-                #d356bc,
-                #09d6b7,
-                #d356bc,
-                #ecc357,
-                #e16c5a,
-                #ecc357
+                $font-gradient-color-1,
+                $font-gradient-color-2,
+                $font-gradient-color-3,
+                $font-gradient-color-4,
+                $font-gradient-color-5,
+                $font-gradient-color-6
             );
             -webkit-background-clip: text;
             background-size: 400% 400%;
@@ -51,44 +51,68 @@
         .description {
             span {
                 padding: 0;
-                font-size: 2em;
+                font-size: 1em;
                 letter-spacing: normal;
             }
         }
     }
     .typed {
-        font-size: 1.2rem;
-        line-height: 1.2rem;
+        font-size: 1.2em;
+        line-height: 1.2em;
         text-align: center;
     }
     .links {
-        margin-top: 2rem;
+        margin-top: 2em;
         text-align: center;
         flex-wrap: wrap;
+        // transform: translateZ(1.5em);
         @include flex-box-center();
         .link {
-            // float: left;
-            flex: 1 0 21%;
-            width: 3rem;
-            height: 3rem;
-            margin: 0 0.4rem;
-            color: $light-color;
-            border: 0.1rem solid $light-color;
-            border-radius: 0.5rem;
-            font-size: 1.5rem;
+            border-radius: 50%;
             text-decoration: none;
-            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+            color: $light-color;
+            background: #405de6;
+            box-shadow: 0px 7px 30px rgba(43, 98, 169, 0.5);
+            width: 2em;
+            height: 2em;
+            font-size: 1.5em;
+            margin: 0 0.6em;
             @include flex-box-center();
-            &:hover {
-                background: $light-color;
-                color: $black-color;
+
+            &#facebook {
+                background: linear-gradient(45deg, #3b5998, #0078d7);
+                box-shadow: 0px 4px 30px rgba(43, 98, 169, 0.5);
+            }
+            &#twitter {
+                background: linear-gradient(45deg, #1da1f2, #0e71c8);
+                box-shadow: 0px 4px 30px rgba(19, 127, 212, 0.7);
+            }
+            &#instagram {
+                background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+                box-shadow: 0px 4px 30px rgba(120, 64, 190, 0.6);
+            }
+            &#linkedin {
+                background: linear-gradient(45deg, #3BA0E3, #236FAD);
+                box-shadow: 0px 4px 30px rgba(27, 86, 231, 0.7);
+            }
+            &#github {
+                background: linear-gradient(45deg, #333333, #626b73);
+                box-shadow: 0px 4px 30px rgba(63, 65, 67, 0.6);
+            }
+            &#medium {
+                background: linear-gradient(45deg, #324e63, #414447);
+                box-shadow: 0px 4px 30px rgba(55, 75, 90, 0.6);
+            }
+            &#five-hundred-px {
+                background: linear-gradient(45deg, #d5135a, #f05924);
+                box-shadow: 0px 4px 30px rgba(223, 45, 70, 0.6);
             }
         }
         .bar {
             // float: left;
-            margin: 1rem 0.5rem;
+            margin: 1em 0.5em;
             width: 100%;
-            height: 0.1rem;
+            height: 0.1em;
             background: $light-color;
         }
     }
@@ -113,16 +137,31 @@
 
 @media (min-width: $size-sm) {
     .info {
+        min-width: 40em;
+        width: auto;
+        margin: 0;
         .rodrigocichetto {
             text-align: left;
             @include flex-box-center();
         }
+        .personal-info {
+            text-align: left;
+            span {
+                font-size: 4em;
+                letter-spacing: -5px;
+                padding: 0 1em 0 0;
+            }
+            .description {
+                span {
+                    font-size: 2em;
+                }
+            }
+        }
         .links {
             .link {
-                width: 4rem;
-                height: 4rem;
-                font-size: 2rem;
-                margin: 0 0.5rem;
+                width: 3em;
+                height: 3em;
+                font-size: 1.5em;
             }
             .bar {
                 height: 5rem;

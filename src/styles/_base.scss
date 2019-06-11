@@ -13,13 +13,15 @@ body {
     @include flex-box-center();
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
+    background: $blue-2-color;  /* fallback for old browsers */
+    background: linear-gradient(to right,$blue-2-color, $blue-color);
 }
 
 .cursor {
+    display: none;
     width: 0.9em;
     height: 0.9em;
     background: rgba($black-color, 0.9);
-    // border: 1px solid white;
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
@@ -50,16 +52,30 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background: #2193b0;  /* fallback for old browsers */
-    background: linear-gradient(to right,$blue-two-color, $blue-color);
     transition-duration: 0s;
-    z-index: 1;
+    z-index: 0;
     .overlay {
         height: 100%;
         background:rgba($overlay-color, 0.2);
     }
 }
 
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:rgba($overlay-color, 0.4);
+    z-index: 1;
+}
+
 .ready-load {
     display: none;
+}
+
+@media (min-width: $size-sm) { 
+    .cursor {
+        display: block;
+    }
 }
