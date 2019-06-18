@@ -19,7 +19,7 @@
 }
 
 .bg-dev {
-    background-image: url('../assets/bg-dev.png');
+    background-image: url('../assets/bg-dev.jpg');
     @include animateBg();
     &--mobile {
         background-position: 68%;
