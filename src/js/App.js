@@ -5,7 +5,6 @@ import '../styles/main.scss'
 import $ from 'jquery'
 import Typed from 'typed.js'
 import tilt from 'tilt.js'
-import './libs/particles.min.js'
 
 export default class App {
 
@@ -60,7 +59,6 @@ export default class App {
       backDelay: 1500
     })
     this.info.tilt({ maxTilt: 3 })
-    particlesJS.load('particles-js', 'assets/particlesjs-config.json', () => {})
   }
 
   commonEvents() {
@@ -142,7 +140,7 @@ export default class App {
   }
 
   updateToDefault() {
-    this.picture.src = 'assets/rodrigocichetto-default.jpg'
+    this.picture.attr('src', 'assets/rodrigocichetto-default.jpg')
     this.changeFavicon('assets/favicon.ico')
     this.bg.removeClass('bg-in')
     this.bg.addClass('bg-out')
@@ -171,7 +169,7 @@ export default class App {
 
   updateToPhotographer(el) {
     // this.bg.removeClass('bg-out')
-    this.picture.src = 'assets/rodrigocichetto-photo.jpg'
+    this.picture.attr('src', 'assets/rodrigocichetto-photo.jpg')
     this.changeFavicon('assets/favicon-photographer.ico')
     if (el.currentTarget.dataset.bg) {
       this.changeBackground(el.currentTarget.dataset.bg)
@@ -212,10 +210,10 @@ export default class App {
     setTimeout(() => this.picture.removeClass('scale-animation'), 1000)
     this.picture.addClass('scale-animation')
     if (this.picture.src.indexOf('default') != -1) {
-      this.picture.src = 'assets/rodrigocichetto-photo.jpg'
+      this.picture.attr('src', 'assets/rodrigocichetto-photo.jpg')
       return
     }
-    this.picture.src = 'assets/rodrigocichetto-default.jpg'
+    this.picture.attr('src', 'assets/rodrigocichetto-default.jpg')
   }
 
   // ReadyLoad
