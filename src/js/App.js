@@ -5,8 +5,10 @@ import '../styles/main.scss'
 import $ from 'jquery'
 import Typed from 'typed.js'
 import tilt from 'tilt.js'
+import './libs/particles.min.js'
 
 export default class App {
+
   constructor() {
     this.backgrounds = []
     this.mobile = false
@@ -58,6 +60,7 @@ export default class App {
       backDelay: 1500
     })
     this.info.tilt({ maxTilt: 3 })
+    particlesJS.load('particles-js', 'assets/particlesjs-config.json', () => {})
   }
 
   commonEvents() {
