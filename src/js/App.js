@@ -4,7 +4,7 @@ import '../styles/main.scss'
 
 import $ from 'jquery'
 import Typed from 'typed.js'
-import tilt from 'tilt.js'
+import UniversalTilt from 'universal-tilt.js'
 
 export default class App {
 
@@ -37,9 +37,10 @@ export default class App {
     this.linksDev = $('.link-dev')
     this.linksPhotographer = $('.link-photographer')
     // After Load
+    // this.rlPicDev = $('#picture-dev--rl')
     this.rlPicPhotographer = $('#picture-photographer--rl')
     this.rlBgDev = $('#bg-dev--rl')
-    this.rlBgMedium = $('#bg-medium--rl')
+    // this.rlBgMedium = $('#bg-medium--rl')
     this.rlBgPhotographer = $('#bg-photographer--rl')
     this.rlBgInstagram = $('#bg-instagram--rl')
     this.rlBgFacebook = $('#bg-facebook--rl')
@@ -58,11 +59,19 @@ export default class App {
       typeSpeed: 50,
       backDelay: 1500
     })
-    this.info.tilt({ maxTilt: 3 })
+    UniversalTilt.init({
+      elements: this.info,
+      settings: {
+        base: 'window'
+      }
+    })
   }
 
   commonEvents() {
     this.linkResize()
+    if (navigator.userAgent.indexOf('iPad')) {
+      this.cursor.hide()
+    }
   }
 
   linkResize() {
@@ -153,7 +162,7 @@ export default class App {
   }
 
   updateToDev(el) {
-    // this.bg.removeClass('bg-out')
+    // this.picture.attr('src', 'assets/rodrigocichetto-dev.jpg')
     this.changeFavicon('assets/favicon-dev.ico')
     if (el.currentTarget.dataset.bg) {
       this.changeBackground(el.currentTarget.dataset.bg)
@@ -168,7 +177,6 @@ export default class App {
   }
 
   updateToPhotographer(el) {
-    // this.bg.removeClass('bg-out')
     this.picture.attr('src', 'assets/rodrigocichetto-photo.jpg')
     this.changeFavicon('assets/favicon-photographer.ico')
     if (el.currentTarget.dataset.bg) {
@@ -187,29 +195,31 @@ export default class App {
   }
 
   mobileEvents() {
-    this.picture.onclick = this.changePicture.bind(this)
+    this.picture.on('touchstart', this.changePicture.bind(this))
     this.intervalBgCarrousel = window.setInterval(this.backgroundCarrousel.bind(this), 5000)
   }
 
   backgroundCarrousel() {
+    this.bg.removeClass('bg-out')
     if (!this.backgrounds.length) {
       this.backgrounds = [
         'bg-instagram',
         'bg-facebook',
         'bg-photographer',
-        'bg-dev',
-        'bg-medium'
+        'bg-dev'
       ]
     }
     let cssClass = this.backgrounds[Math.floor(Math.random() * this.backgrounds.length)]
     this.backgrounds.splice(this.backgrounds.indexOf(cssClass), 1)
-    this.bg.attr('class', `bg bg-image ${cssClass} ${cssClass}--mobile`)
+    this.bg.attr('class', `bg bg-image bg-in ${cssClass} ${cssClass}--mobile`)
+    window.setTimeout(() => this.bg.removeClass('bg-in'), 2000)
+    window.setTimeout(() => this.bg.addClass('bg-out'), 4500)
   }
 
   changePicture() {
-    setTimeout(() => this.picture.removeClass('scale-animation'), 1000)
     this.picture.addClass('scale-animation')
-    if (this.picture.src.indexOf('default') != -1) {
+    setTimeout(() => this.picture.removeClass('scale-animation'), 1000)
+    if (this.picture.attr('src').indexOf('default') != -1) {
       this.picture.attr('src', 'assets/rodrigocichetto-photo.jpg')
       return
     }
@@ -218,9 +228,10 @@ export default class App {
 
   // ReadyLoad
   readyLoad() {
+    // this.rlPicDev.src = 'assets/rodrigocichetto-dev.jpg'
     this.rlPicPhotographer.src = 'assets/rodrigocichetto-photo.jpg'
     this.rlBgDev.addClass('bg-dev')
-    this.rlBgMedium.addClass('bg-medium')
+    // this.rlBgMedium.addClass('bg-medium')
     this.rlBgPhotographer.addClass('bg-photographer')
     this.rlBgInstagram.addClass('bg-instagram')
     this.rlBgFacebook.addClass('bg-facebook')

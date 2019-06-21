@@ -92,7 +92,15 @@ module.exports = {
 			{
 				from: 'src/CNAME', 
 				to: '.'
-			}
+      },
+      {
+        from: 'src/manifest.json',
+        to: '.'
+      },
+      {
+        from: 'src/service-worker.js',
+        to: '.'
+      }
 		]),
 		new ImageminPlugin({ 
 			test: /\.(jpg|jpe?g|png|gif|svg|ico)$/i,

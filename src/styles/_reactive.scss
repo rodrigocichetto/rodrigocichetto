@@ -16,7 +16,6 @@
 
 .bg-dev {
     background-image: url('../assets/bg-dev.jpg');
-    @include animateBg();
     &--mobile {
         background-position: 68%;
     }
@@ -24,17 +23,17 @@
 
 .bg-photographer {
     background-image: url('../assets/bg-photographer.jpg');
-    @include animateBg();
+    &--mobile {
+      background-position: 45% center;
+    }
 }
 
 .bg-medium {
     background-image: url('../assets/bg-medium.jpg');
-    @include animateBg();
 }
 
 .bg-instagram {
     background-image: url('../assets/bg-instagram.jpg');
-    @include animateBg();
     &--mobile {
         background-position: 70% 10%;
     }
@@ -42,7 +41,6 @@
 
 .bg-facebook {
     background-image: url('../assets/bg-facebook.jpg');
-    @include animateBg();
     &--mobile {
         background-position: 47%;
     }
