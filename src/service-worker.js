@@ -18,9 +18,7 @@ self.addEventListener('install', function (e) {
   )
 })
 
-debugger;
 self.addEventListener('fetch', (e) => {
-  debugger;
   e.respondWith(
     caches.match(e.request).then(function (response) {
       return response || fetch(e.request);

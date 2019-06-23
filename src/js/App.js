@@ -62,7 +62,7 @@ export default class App {
     UniversalTilt.init({
       elements: this.info,
       settings: {
-        base: 'window'
+        max: 20
       }
     })
   }
