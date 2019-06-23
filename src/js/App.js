@@ -59,6 +59,10 @@ export default class App {
       typeSpeed: 50,
       backDelay: 1500
     })
+    this.initTilt()
+  }
+
+  initTilt() {
     UniversalTilt.init({
       elements: this.info,
       settings: {
@@ -88,7 +92,7 @@ export default class App {
       this.mobile = false
       clearInterval(this.intervalBgCarrousel)
       this.bg.attr('class', 'bg')
-      this.info.tilt({ maxTilt: 3 })
+      this.initTilt()
       $(`*:not(.${this.info.attr('class')})`).unbind()
       this.addEvents()
     }
@@ -128,6 +132,8 @@ export default class App {
 
   exitLoader() {
     $('.loader').addClass('hidden')
+    $('.cursor').removeClass('hidden')
+    $('.tag').removeClass('hidden')
     $('.info').removeClass('hidden')
   }
 

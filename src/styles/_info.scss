@@ -2,7 +2,7 @@
     z-index: 2;
     width: 100%;
     margin: 1em;
-    padding: 0 2em 2em;
+    padding: 0 1em 2em;
     background: rgba($light-color, 0.9);
     border-radius: 1.2em;
     display: flex;
@@ -24,9 +24,9 @@
         margin: 1em 0 0;
         display: flex;
         flex-direction: column;
-        font-family: "Roboto", sans-serif;
+        font-family: $font-main;
         transform: translateZ(2.5em);
-        span {
+        span:not(.tag) {
             text-align: center;
             font-size: 2em;
             font-weight: 800;
@@ -65,7 +65,7 @@
         margin-top: 2em;
         text-align: center;
         flex-wrap: wrap;
-        // transform: translateZ(1.5em);
+        transform: translateZ(1em);
         @include flex-box-center();
         .link {
             border-radius: 50%;
@@ -73,10 +73,12 @@
             color: $light-color;
             background: #405de6;
             box-shadow: 0px 7px 30px rgba(43, 98, 169, 0.5);
-            width: 2em;
-            height: 2em;
+            width: calc(100vw * (1/3) - 2.5em);
+            height: calc(100vw * (1/3) - 2.5em);
+            min-width: 2.5em;
+            min-height: 2.5em;
             font-size: 1.5em;
-            margin: 0 0.3em;
+            margin: 0.2em 0.5em;
             @include flex-box-center();
 
             &#facebook {
@@ -109,6 +111,7 @@
             }
         }
         .bar {
+            display: none;
             // float: left;
             margin: 1em 0.5em;
             width: 100%;
@@ -123,16 +126,17 @@
         min-width: 40em;
         width: auto;
         margin: 0;
+        padding: 0 2em 2em;
         .rodrigocichetto {
             text-align: left;
             @include flex-box-center();
         }
         .personal-info {
             text-align: left;
-            span {
+            span:not(.tag) {
                 font-size: 4em;
-                letter-spacing: -5px;
-                padding: 0 1em 0 0;
+                letter-spacing: -2px;
+                padding: 0 0.2em 0 0;
             }
             .description {
                 span {
