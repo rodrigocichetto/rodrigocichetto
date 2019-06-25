@@ -1,80 +1,81 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Roboto:300,400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Roboto:300,400,700&display=swap");
 
-html, a {
-    cursor: none;
+html,
+a {
+  cursor: none;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    @include flex-box-center();
-    font-family: $font-main;
-    overflow: hidden;
-    background: $sky-blue;  /* fallback for old browsers */
-    background: linear-gradient(to right,$sky-blue, $eastern-blue);
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  @include flex-box-center();
+  font-family: $font-main;
+  overflow: hidden;
+  background: $sky-blue; /* fallback for old browsers */
+  background: linear-gradient(to right, $sky-blue, $eastern-blue);
 }
 
 .cursor {
+  width: 0.9em;
+  height: 0.9em;
+  background: rgba($black-color, 0.9);
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 99;
+  &:after {
+    content: "";
     width: 0.9em;
     height: 0.9em;
-    background: rgba($black-color, 0.9);
-    border-radius: 50%;
     position: absolute;
-    pointer-events: none;
-    z-index: 99;
-    &:after {
-        content: "";
-        width: 0.9em;
-        height: 0.9em;
-        position: absolute;
-        border-radius: 50%;
-        background: $black-color;
-        opacity: .5;
-        overflow: visible;
-        transform: scale(1);
-    }
-    &.is-hover:after {
-        animation: cursorAnim 1s forwards;
-    }
-    &.is-hovered:after {
-        animation: cursorAnimOut 1s forwards;
-    }
+    border-radius: 50%;
+    background: $black-color;
+    opacity: 0.5;
+    overflow: visible;
+    transform: scale(1);
+  }
+  &.is-hover:after {
+    animation: cursorAnim 1s forwards;
+  }
+  &.is-hovered:after {
+    animation: cursorAnimOut 1s forwards;
+  }
 }
 
 .bg {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition-duration: 0s;
-    z-index: 1;
-    .overlay {
-        height: 100%;
-        background:rgba($overlay-color, 0.2);
-    }
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-duration: 0s;
+  z-index: 1;
+  .overlay {
+    height: 100%;
+    background: rgba($overlay-color, 0.2);
+  }
 }
 
 .overlay {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background:rgba($overlay-color, 0.4);
-    z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba($overlay-color, 0.4);
+  z-index: 1;
 }
 
 .ready-load {
-    display: none;
+  display: none;
 }
 
-@media (min-width: $size-sm) { 
-    .cursor {
-        display: block;
-    }
+@media (min-width: $size-sm) {
+  .cursor {
+    display: block;
+  }
 }

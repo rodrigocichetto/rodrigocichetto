@@ -1,56 +1,56 @@
 .bg {
-    &-in {
-        animation: bgAnim .5s ease-in-out forwards;
-    }
-    &-out {
-        animation: bgAnimOut .5s ease-in-out forwards;
-    }
+  &-in {
+    animation: bgAnim 0.5s ease-in-out forwards;
+  }
+  &-out {
+    animation: bgAnimOut 0.5s ease-in-out forwards;
+  }
 }
 
 .bg-image {
-    background-position: center;
-    background-size: cover;
-    transition-duration: 0s;
-    transition: background-image 0.3s ease-in-out;
+  background-position: center;
+  background-size: cover;
+  transition-duration: 0s;
+  transition: background-image 0.3s ease-in-out;
 }
 
 .bg-dev {
-    background-image: url('../assets/bg-dev.jpg');
-    background-position: 68%;
-    @media(min-width: $size-sm) {
-      background-position: center center;
-    }
+  background-image: url("../assets/bg-dev.jpg");
+  background-position: 68%;
+  @media (min-width: $size-sm) {
+    background-position: center center;
+  }
 }
 
 .bg-photographer {
-    background-image: url('../assets/bg-photographer.jpg');
-    background-position: 45% center;
-    @media(min-width: $size-sm) {
-      background-position: center center;
-    }
+  background-image: url("../assets/bg-photographer.jpg");
+  background-position: 45% center;
+  @media (min-width: $size-sm) {
+    background-position: center center;
+  }
 }
 
 .bg-medium {
-    background-image: url('../assets/bg-medium.jpg');
+  background-image: url("../assets/bg-medium.jpg");
 }
 
 .bg-instagram {
-    background-image: url('../assets/bg-instagram.jpg');
-    background-position: 70% 10%;
-    @media(min-width: $size-sm) {
-      background-position: center center;
-    }
+  background-image: url("../assets/bg-instagram.jpg");
+  background-position: 70% 10%;
+  @media (min-width: $size-sm) {
+    background-position: center center;
+  }
 }
 
 .bg-facebook {
-    background-image: url('../assets/bg-facebook.jpg');
-    background-position: 47%;
-    @media(min-width: $size-sm) {
-      background-position: center center;
-    }
+  background-image: url("../assets/bg-facebook.jpg");
+  background-position: 47%;
+  @media (min-width: $size-sm) {
+    background-position: center center;
+  }
 }
 
 .scale-animation {
-    transition: all 0.3s ease-in-out;
-    animation: scaleAnim 1s ease alternate;
+  transition: all 0.3s ease-in-out;
+  animation: scaleAnim 1s ease alternate;
 }

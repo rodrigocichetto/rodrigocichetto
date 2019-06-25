@@ -1,15 +1,15 @@
 @mixin flex-box-center() {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin colorBgMotion($duration, $delay) {
-    animation-name: colorBgMove;
-    animation-duration: $duration;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-    animation-delay: $delay;
+  animation-name: colorBgMove;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: $delay;
 }
