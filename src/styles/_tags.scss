@@ -32,7 +32,10 @@
   // main
   &__title {
     color: $black-color;
-    left: 0.1em;
+    left: 1em;
+    @media (min-width: $size-sm) {
+      left: 0.1em;
+    }
   }
   &#title-in {
     top: -1.5em;

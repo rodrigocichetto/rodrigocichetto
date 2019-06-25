@@ -4,24 +4,23 @@ import '../styles/main.scss'
 
 import $ from 'jquery'
 import Typed from 'typed.js'
-import UniversalTilt from 'universal-tilt.js'
+import tilt from 'tilt.js'
 
 export default class App {
 
   constructor() {
     this.backgrounds = []
-    this.mobile = false
     this.intervalBgCarrousel = null
+    this.tilted = null
+    this.mobile = this.isDevice(/Android|iPhone|iPad/g)
     this.getElements()
     this.initComponents()
-    if ((navigator.userAgent.indexOf('Android') != -1) || (navigator.userAgent.indexOf('iPhone') != -1)) {
-      this.mobile = true
+    if (this.mobile) {
       this.initServiceWorker()
       this.mobileEvents()
     } else {
       this.addEvents()
     }
-    this.commonEvents()
     this.exitLoader()
     window.onload = this.readyLoad.bind(this)
   }
@@ -59,23 +58,24 @@ export default class App {
       typeSpeed: 50,
       backDelay: 1500
     })
-    this.initTilt()
+    if (!this.mobile) {
+      this.initTilt()
+    }
   }
 
   initTilt() {
-    UniversalTilt.init({
-      elements: this.info,
-      settings: {
-        max: 20
-      }
+    this.tilted = this.info.tilt({ 
+      maxTilt: 10,
+      scale: 1,
+      perspective: 400
     })
+    this.info.addClass('tilt')
   }
 
-  commonEvents() {
-    this.linkResize()
-    if (navigator.userAgent.indexOf('iPad')) {
-      this.cursor.hide()
-    }
+  destroyTilt() {
+    this.tilted.tilt.destroy.call(this.tilted)
+    this.info.removeClass('tilt')
+    this.tilted = null
   }
 
   linkResize() {
@@ -83,18 +83,25 @@ export default class App {
   }
 
   updateResize(e) {
-    if (!this.mobile && $(document).width() < 576) {
-      this.mobile = true
-      $(`*:not(.${this.info.attr('class')})`).unbind()
-      this.mobileEvents()
-    }
-    if (this.mobile && $(document).width() >= 576) {
-      this.mobile = false
+
+    if (this.isDevice(/Android|iPhone|iPad/g)) {
+      $('.cursor').addClass('hidden')
+      if (!this.mobile) {
+        this.destroyTilt()
+        $(`*:not(.${this.info.attr('class')})`).unbind()
+        this.mobileEvents()
+        this.mobile = true
+      }
+    } else {
       clearInterval(this.intervalBgCarrousel)
-      this.bg.attr('class', 'bg')
-      this.initTilt()
-      $(`*:not(.${this.info.attr('class')})`).unbind()
-      this.addEvents()
+      $('.cursor').removeClass('hidden')
+      if (this.mobile) {
+        this.bg.attr('class', 'bg')
+        $(`*:not(.${this.info.attr('class')})`).unbind()
+        this.addEvents()
+        this.initTilt()
+        this.mobile = false
+      }
     }
   }
 
@@ -132,9 +139,11 @@ export default class App {
 
   exitLoader() {
     $('.loader').addClass('hidden')
-    $('.cursor').removeClass('hidden')
     $('.tag').removeClass('hidden')
     $('.info').removeClass('hidden')
+    if (!this.isDevice(/Android|iPhone|iPad/g)) {
+      $('.cursor').removeClass('hidden')
+    }
   }
 
   changeFavicon(favico) {
@@ -196,7 +205,7 @@ export default class App {
   initServiceWorker() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
-        .then((reg) => {}).catch((err) => {});
+        .then((reg) => { }).catch((err) => { });
     }
   }
 
@@ -234,6 +243,11 @@ export default class App {
 
   // ReadyLoad
   readyLoad() {
+    this.linkResize()
+    this.lazyLoad()
+  }
+
+  lazyLoad() {
     // this.rlPicDev.src = 'assets/rodrigocichetto-dev.jpg'
     this.rlPicPhotographer.src = 'assets/rodrigocichetto-photo.jpg'
     this.rlBgDev.addClass('bg-dev')
@@ -241,5 +255,9 @@ export default class App {
     this.rlBgPhotographer.addClass('bg-photographer')
     this.rlBgInstagram.addClass('bg-instagram')
     this.rlBgFacebook.addClass('bg-facebook')
+  }
+
+  isDevice(regex) {
+    return regex.test(navigator.userAgent)
   }
 }
