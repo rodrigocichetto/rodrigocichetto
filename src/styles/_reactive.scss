@@ -17,16 +17,20 @@
 .bg-dev {
   background-image: url("../assets/bg-dev.jpg");
   background-position: 68%;
-  @media (min-width: $size-sm) {
-    background-position: center center;
+  @media (min-width: $size-md) {
+    &:not(.ipad) {
+      background-position: center center;
+    }
   }
 }
 
 .bg-photographer {
   background-image: url("../assets/bg-photographer.jpg");
   background-position: 45% center;
-  @media (min-width: $size-sm) {
-    background-position: center center;
+  @media (min-width: $size-md) {
+    &:not(.ipad) {
+      background-position: center center;
+    }
   }
 }
 
@@ -37,16 +41,20 @@
 .bg-instagram {
   background-image: url("../assets/bg-instagram.jpg");
   background-position: 70% 10%;
-  @media (min-width: $size-sm) {
-    background-position: center center;
+  @media (min-width: $size-md) {
+    &:not(.ipad) {
+      background-position: center center;
+    }
   }
 }
 
 .bg-facebook {
   background-image: url("../assets/bg-facebook.jpg");
   background-position: 47%;
-  @media (min-width: $size-sm) {
-    background-position: center center;
+  @media (min-width: $size-md) {
+    &:not(.ipad) {
+      background-position: center center;
+    }
   }
 }
 

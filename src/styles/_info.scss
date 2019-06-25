@@ -12,7 +12,7 @@
     width: auto;
     margin: 0;
   }
-  @media (min-width: $size-md) {
+  @media (min-width: $size-md) and (min-height: $max-landscape-height) {
     min-width: 40em;
     padding: 0 2em 2em;
   }
@@ -38,7 +38,7 @@
       box-shadow: 0 0.3em 1.5em 0 $eastern-blue,
         0 0 0 0.4em rgba(darken($eastern-blue, 7%), 0.5);
       border-radius: 50%;
-      @media (min-width: $size-md) {
+      @media (min-width: $size-md) and (min-height: $max-landscape-height) {
         width: 6em;
         border: 0.2em solid rgba($light-color, 0.5);
         box-shadow: 0 0.3em 3.1em 0 $eastern-blue,
@@ -81,7 +81,7 @@
         letter-spacing: -2px;
         padding: 0 0.2em 0 0;
       }
-      @media (min-width: $size-md) {
+      @media (min-width: $size-md) and (min-height: $max-landscape-height) {
         font-size: 3.5em;
       }
     }
@@ -94,7 +94,7 @@
         @media (min-width: $size-sm) {
           font-size: 1em;
         }
-        @media (min-width: $size-md) {
+        @media (min-width: $size-md) and (min-height: $max-landscape-height) {
           font-size: 2em;
         }
       }
@@ -136,7 +136,7 @@
         font-size: 1.5em;
         margin: 0 0.3em;
       }
-      @media (min-width: $size-md) {
+      @media (min-width: $size-md) and (min-height: $max-landscape-height) {
         width: 3em;
         height: 3em;
         margin: 0 0.6em;
@@ -186,3 +186,14 @@
     }
   }
 }
+
+// .landscape {
+//   .info {
+//     padding: 0 1.5em 1.5em;
+//   } 
+//   .rodrigocichetto {
+//     .picture {
+//       width: 5em;
+//     }
+//   }
+// }
