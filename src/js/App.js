@@ -50,9 +50,9 @@ export default class App {
   initComponents() {
     this.typedComponent = new Typed(this.typed.get(0), {
       strings: [
-        'Dev. Front-end &#x1F468&#x1F4BB',
-        'Photographer &#x1F4F7',
-        'Gamer &#x1F3AE'
+        'Dev. Front-end &#x1F468;&#x1F4BB;',
+        'Photographer &#x1F4F7;',
+        'Gamer &#x1F3AE;'
       ],
       loop: true,
       typeSpeed: 50,
@@ -120,7 +120,7 @@ export default class App {
   updateCursor(e) {
     this.cursor.attr(
       'style',
-      'top: ' + (e.pageY - 10) + 'px left: ' + (e.pageX - 10) + 'px'
+      'top: ' + (e.pageY - 10) + 'px; left: ' + (e.pageX - 10) + 'px'
     )
   }
 
