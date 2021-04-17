@@ -1,14 +1,16 @@
-import { addDecorator } from '@storybook/react'
-import { withNextRouter } from 'storybook-addon-next-router'
-import GlobalStyles from '../src/styles/global'
+import { addDecorator } from '@storybook/react';
+import { withNextRouter } from 'storybook-addon-next-router';
 
-addDecorator(withNextRouter())
+import GlobalStyles from 'styles/global';
+import { ThemeProvider } from 'context/ThemeContext';
+
+addDecorator(withNextRouter());
 
 export const decorators = [
-  (Story) => (
-    <>
+  Story => (
+    <ThemeProvider>
       <GlobalStyles />
       <Story />
-    </>
+    </ThemeProvider>
   )
-]
+];

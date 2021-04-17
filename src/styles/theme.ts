@@ -46,7 +46,7 @@ const defaultTheme = {
   }
 };
 
-const light = {
+export const light = {
   ...defaultTheme,
   colors: {
     primary: '#2C73D2',
@@ -58,7 +58,7 @@ const light = {
   }
 };
 
-const dark = {
+export const dark = {
   ...defaultTheme,
   colors: {
     primary: '#ABD9FF',
@@ -70,7 +70,4 @@ const dark = {
   }
 };
 
-export default {
-  light,
-  dark
-};
+export default light;
