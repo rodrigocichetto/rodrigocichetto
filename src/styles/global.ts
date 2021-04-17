@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Lato';
     font-style: normal;
     font-weight: 100;
+    font-display: swap;
     src: local(''),
       url('/fonts/lato-v17-latin-100.woff2') format('woff2');
   }
@@ -15,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local(''),
       url('/fonts/lato-v17-latin-regular.woff2') format('woff2');
   }
@@ -24,6 +26,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
     src: local(''),
       url('/fonts/lato-v17-latin-700.woff2') format('woff2');
   }
@@ -33,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Lato';
     font-style: normal;
     font-weight: 900;
+    font-display: swap;
     src: local(''),
       url('/fonts/lato-v17-latin-900.woff2') format('woff2');
   }
@@ -42,6 +46,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Indie Flower';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local(''),
       url('/fonts/indie-flower-v12-latin-regular.woff2') format('woff2');
   }
@@ -50,6 +55,8 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
@@ -61,7 +68,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 `;
 
