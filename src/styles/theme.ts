@@ -53,7 +53,7 @@ export const light = {
     secondary: '#424656',
     background: '#F4F9FF',
     text: '#424656',
-    menu: '#343844',
+    menu: '#FAFAFA',
     activeTheme: '#0984e3'
   }
 };
