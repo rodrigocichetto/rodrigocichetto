@@ -1,9 +1,9 @@
-import { ProfilePicture } from 'components';
+import { ProfilePicture, ToggleTheme } from 'components';
 
 export default function Home() {
   return (
     <>
-      <h1>Index</h1>
+      <ToggleTheme absolute />
       <ProfilePicture src="/img/profile-pic.png" />
     </>
   );
