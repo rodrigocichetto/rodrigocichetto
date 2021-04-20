@@ -67,6 +67,7 @@ ${({ theme }) => css`
   }
 
   body {
+    background: ${theme.colors.background};
     font-family: ${theme.font.family};
   }
 `}
