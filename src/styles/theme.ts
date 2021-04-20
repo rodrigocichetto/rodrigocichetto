@@ -49,6 +49,7 @@ const defaultTheme = {
 export const light = {
   ...defaultTheme,
   colors: {
+    ...defaultTheme.colors,
     primary: '#2C73D2',
     secondary: '#424656',
     background: '#F4F9FF',
@@ -61,6 +62,7 @@ export const light = {
 export const dark = {
   ...defaultTheme,
   colors: {
+    ...defaultTheme.colors,
     primary: '#ABD9FF',
     secondary: '#2c73d2',
     background: '#424656',
