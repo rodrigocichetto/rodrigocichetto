@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text /> should render correctly 1`] = `
+.c0 {
+  color: #424656;
+  font-family: Lato;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.c0 strong {
+  font-weight: 700;
+}
+
+<p
+  class="c0"
+  color="text"
+>
+  Example text
+</p>
+`;
