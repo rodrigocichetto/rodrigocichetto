@@ -18,7 +18,7 @@ describe('<ToggleTheme />', () => {
   it('should toggle content', () => {
     const { container } = renderWithTheme(<ToggleTheme />);
 
-    fireEvent.click(container.firstChild);
+    fireEvent.click(container.firstChild!);
 
     expect(container.firstChild).toHaveStyle({
       backgroundColor: '#032b43'
