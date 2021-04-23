@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tag /> should render correctly 1`] = `
+.c1 {
+  color: #424656;
+  font-family: Indie Flower;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.c1 strong {
+  font-weight: 700;
+}
+
+.c0 {
+  opacity: 0.5;
+}
+
+<div
+  class="c0"
+>
+  <span
+    class="c1"
+    color="text"
+  >
+    &lt;
+    body
+    &gt;
+  </span>
+</div>
+`;

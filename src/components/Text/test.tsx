@@ -17,7 +17,7 @@ describe('<Text />', () => {
   });
 
   it('should render with a different tag', () => {
-    const { container } = renderWithTheme(<Text as="h1">Example title</Text>);
+    const { container } = renderWithTheme(<Text tag="h1">Example title</Text>);
 
     expect(container.querySelector('h1')).toHaveTextContent('Example title');
   });

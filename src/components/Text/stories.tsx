@@ -9,7 +9,7 @@ export default {
 export const Default: Story = args => <Text {...args}>Example</Text>;
 
 export const Title: Story = args => (
-  <Text {...args} as="h1">
+  <Text {...args} tag="h1">
     Example
   </Text>
 );
@@ -20,7 +20,7 @@ Title.args = {
 };
 
 export const Span: Story = args => (
-  <Text {...args} as="span">
+  <Text {...args} tag="span">
     Example
   </Text>
 );
