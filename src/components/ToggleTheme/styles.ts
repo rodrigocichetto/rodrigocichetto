@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 
 import { ThemeTypes } from 'types/global';
 
@@ -17,15 +17,15 @@ const modifiers = {
     background-color: #0984e3;
   `,
 
-  absolute: () => css`
+  absolute: (theme: DefaultTheme) => css`
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: ${theme.spacings.small};
+    right: ${theme.spacings.small};
   `
 };
 
 export const Wrapper = styled.label<WrapperProps>`
-  ${({ selectedTheme, absolute }) => css`
+  ${({ theme, selectedTheme, absolute }) => css`
     cursor: pointer;
     border-radius: 1.6em;
     display: inline-block;
@@ -53,7 +53,7 @@ export const Wrapper = styled.label<WrapperProps>`
     }
 
     ${modifiers[selectedTheme]}
-    ${absolute && modifiers.absolute()}
+    ${absolute && modifiers.absolute(theme)}
   `}
 `;
 

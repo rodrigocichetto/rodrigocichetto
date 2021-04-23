@@ -1,5 +1,7 @@
 import { fireEvent } from '@testing-library/react';
 
+import theme from 'styles/theme';
+
 import { renderWithTheme } from 'utils/tests/helpers';
 
 import ToggleTheme from '.';
@@ -30,8 +32,8 @@ describe('<ToggleTheme />', () => {
 
     expect(container.firstChild).toHaveStyle({
       position: 'absolute',
-      top: '2rem',
-      right: '2rem'
+      top: theme.spacings.small,
+      right: theme.spacings.small
     });
   });
 });
