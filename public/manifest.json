@@ -13,9 +13,9 @@
       "sizes": "512x512"
     }
   ],
-  "background_color": "#06092B",
-  "description": "Boilerplate utilizando Typescript, React, NextJS e Styled Components!",
+  "background_color": "#2C73D2",
+  "description": "Desenvolvedor Front-end &#x1F468;&#x1F4BB; e Gamer &#x1F3AE;, sou amante do mundo do design e apaixonado pelas melhores tecnologias de desenvolvimento. Rodrigo Cichetto // &#x1F3AE; shibetto",
   "display": "fullscreen",
   "start_url": "/",
-  "theme_color": "#06092B"
+  "theme_color": "#2C73D2"
 }
