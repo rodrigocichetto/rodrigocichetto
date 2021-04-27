@@ -15,8 +15,9 @@ const defaultTheme = {
       xsmall: '1.2rem',
       small: '1.4rem',
       medium: '1.6rem',
-      large: '1.8rem',
-      xlarge: '2.0rem',
+      xmedium: '1.8rem',
+      large: '2.0rem',
+      xlarge: '2.4rem',
       xxlarge: '2.8rem'
     },
     weights: {
