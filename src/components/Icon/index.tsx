@@ -1,38 +1,45 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Linkedin, Twitter, Instagram } from '@styled-icons/entypo-social';
 
 import {
-  faGithub,
-  faLinkedinIn,
-  faTwitter,
-  faMediumM,
-  faInstagram,
-  faSteam,
-  faTwitch,
-  faHtml5,
-  faCss3Alt,
-  faJs,
-  faReact
-} from '@fortawesome/free-brands-svg-icons';
+  Github,
+  Medium,
+  Twitch,
+  Html5,
+  Css3,
+  Javascript,
+  ReactLogo
+} from '@styled-icons/boxicons-logos';
 
-import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { Steam } from '@styled-icons/fa-brands';
+
+import { User } from '@styled-icons/fa-regular';
+
+import { CounterStrike } from '@styled-icons/simple-icons';
+
+import { GameController } from '@styled-icons/ionicons-outline';
+
+import { Sword } from '@styled-icons/remix-line';
 
 import { ThemeFontSizes, ThemeColors } from 'types/global';
 
 import * as S from './styles';
 
 const icons = {
-  github: faGithub,
-  linkedin: faLinkedinIn,
-  twitter: faTwitter,
-  medium: faMediumM,
-  instagram: faInstagram,
-  steam: faSteam,
-  twitch: faTwitch,
-  html5: faHtml5,
-  css3: faCss3Alt,
-  js: faJs,
-  react: faReact,
-  user: faUser
+  github: Github,
+  linkedin: Linkedin,
+  twitter: Twitter,
+  medium: Medium,
+  instagram: Instagram,
+  steam: Steam,
+  twitch: Twitch,
+  html5: Html5,
+  css3: Css3,
+  js: Javascript,
+  react: ReactLogo,
+  user: User,
+  cs: CounterStrike,
+  xp: Sword,
+  gamer: GameController
 };
 
 export type AvailableIcons = keyof typeof icons;
@@ -43,10 +50,14 @@ export type IconProps = {
   icon: AvailableIcons;
 };
 
-const Icon = ({ icon, color = 'text', size = 'large' }: IconProps) => (
-  <S.Wrapper size={size} color={color}>
-    <FontAwesomeIcon icon={icons[icon]} size="1x" />
-  </S.Wrapper>
-);
+const Icon = ({ icon, color = 'text', size = 'large' }: IconProps) => {
+  const ContentIcon = icons[icon];
+
+  return (
+    <S.Wrapper size={size} color={color}>
+      <ContentIcon />
+    </S.Wrapper>
+  );
+};
 
 export default Icon;
