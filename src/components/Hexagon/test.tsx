@@ -19,11 +19,5 @@ describe('<Hexagon />', () => {
     expect(container.firstChild).toHaveStyle({
       color: theme.colors.primary
     });
-
-    expect(
-      container.querySelector('svg[data-icon="github"]')?.parentElement
-    ).toHaveStyle({
-      color: theme.colors.secondary
-    });
   });
 });
