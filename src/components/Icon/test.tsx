@@ -15,9 +15,7 @@ describe('<Icon />', () => {
       fontSize: theme.font.sizes.small
     });
 
-    expect(
-      container.querySelector('svg[data-icon="instagram"]')
-    ).toBeInTheDocument();
+    expect(container.querySelector('svg')).toBeInTheDocument();
 
     expect(container.firstChild).toMatchSnapshot();
   });
