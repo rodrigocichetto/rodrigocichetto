@@ -10,5 +10,6 @@ export const Wrapper = styled.nav`
     bottom: ${theme.spacings.small};
     left: 50%;
     transform: translateX(-50%);
+    /* min-width: ${theme.spacings.xxlarge}; */
   `}
 `;
