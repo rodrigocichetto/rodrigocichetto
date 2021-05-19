@@ -6,6 +6,7 @@ const defaultTheme = {
   border: {
     radius: '0.4rem'
   },
+  shadow: '0 0 5rem rgba(0,0,0, 0.1)',
   font: {
     family:
       "Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
