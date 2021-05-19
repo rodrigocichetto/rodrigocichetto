@@ -1,3 +1,5 @@
+import { screen } from '@testing-library/react';
+
 import { renderWithTheme } from 'utils/tests/helpers';
 
 import theme from 'styles/theme';
@@ -16,6 +18,7 @@ describe('<Icon />', () => {
     });
 
     expect(container.querySelector('svg')).toBeInTheDocument();
+    expect(screen.getByLabelText(/instagram/i)).toBeInTheDocument();
 
     expect(container.firstChild).toMatchSnapshot();
   });
