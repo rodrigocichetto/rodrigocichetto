@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.nav`
   ${({ theme }) => css`
+    display: flex;
     position: absolute;
     box-shadow: ${theme.shadow};
     padding: ${theme.spacings.xsmall};
@@ -10,6 +11,28 @@ export const Wrapper = styled.nav`
     bottom: ${theme.spacings.small};
     left: 50%;
     transform: translateX(-50%);
-    /* min-width: ${theme.spacings.xxlarge}; */
+
+    & > * {
+      margin: 0 ${theme.spacings.xsmall};
+    }
+  `}
+`;
+
+const linkModifiers = {
+  active: () => css`
+    opacity: 1;
+  `
+};
+
+type LinkWrapperProps = {
+  active?: boolean;
+};
+
+export const LinkWrapper = styled.div<LinkWrapperProps>`
+  ${({ active }) => css`
+    cursor: pointer;
+    opacity: 0.5;
+
+    ${!!active && linkModifiers.active()}
   `}
 `;

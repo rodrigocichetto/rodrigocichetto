@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 import { Linkedin, Twitter, Instagram } from '@styled-icons/entypo-social';
 
 import {
@@ -50,14 +52,18 @@ export type IconProps = {
   icon: AvailableIcons;
 };
 
-const Icon = ({ icon, color = 'text', size = 'large' }: IconProps) => {
-  const ContentIcon = icons[icon];
+const Icon = forwardRef<HTMLDivElement, IconProps>(
+  ({ icon, color = 'text', size = 'large' }, ref) => {
+    const ContentIcon = icons[icon];
 
-  return (
-    <S.Wrapper size={size} color={color}>
-      <ContentIcon />
-    </S.Wrapper>
-  );
-};
+    return (
+      <S.Wrapper ref={ref} size={size} color={color}>
+        <ContentIcon aria-label={icon} />
+      </S.Wrapper>
+    );
+  }
+);
+
+Icon.displayName = 'Icon';
 
 export default Icon;

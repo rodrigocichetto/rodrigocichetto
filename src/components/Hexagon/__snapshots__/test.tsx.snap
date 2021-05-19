@@ -73,6 +73,7 @@ exports[`<Hexagon /> should render correctly 1`] = `
     >
       <svg
         aria-hidden="true"
+        aria-label="github"
         class="c3"
         fill="currentColor"
         focusable="false"

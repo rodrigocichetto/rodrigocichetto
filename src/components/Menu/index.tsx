@@ -1,6 +1,6 @@
+import { useCallback } from 'react';
 import Link from 'next/link';
-// import { useRouter } from 'next/router';
-// import { useCallback } from 'react';
+import { useRouter } from 'next/router';
 
 import { Icon } from 'components';
 import { AvailableIcons } from 'components/Icon';
@@ -15,30 +15,39 @@ export type MenuPage = {
 
 export const PAGES: MenuPage[] = [
   {
+    path: '/xp',
+    icon: 'xp',
+    label: 'Experiência'
+  },
+  {
     path: '/',
     icon: 'user',
     label: 'Home'
   },
   {
     path: '/gamer',
-    icon: 'user',
-    label: 'Home'
+    icon: 'gamer',
+    label: 'Gamer'
   }
 ];
 
 const Menu = () => {
-  // const router = useRouter();
+  const router = useRouter();
 
-  // const isActive = useCallback((path: string) => router.pathname === path, [
-  //   router.pathname
-  // ]);
+  const isActive = useCallback((path: string) => router.pathname === path, [
+    router.pathname
+  ]);
 
   return (
     <S.Wrapper>
       {PAGES.map(page => (
-        <Link key={page.path} href={page.path}>
-          <Icon icon={page.icon} />
-        </Link>
+        <S.LinkWrapper key={page.path} active={isActive(page.path)}>
+          <Link href={page.path} passHref>
+            <a>
+              <Icon size="xxlarge" icon={page.icon} />
+            </a>
+          </Link>
+        </S.LinkWrapper>
       ))}
     </S.Wrapper>
   );
