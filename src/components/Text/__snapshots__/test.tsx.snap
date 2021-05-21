@@ -6,6 +6,7 @@ exports[`<Text /> should render correctly 1`] = `
   font-family: Lato;
   font-size: 1.6rem;
   font-weight: 400;
+  text-align: left;
 }
 
 .c0 strong {

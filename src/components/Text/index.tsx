@@ -14,6 +14,7 @@ export type TextProps = {
   color?: ThemeColors;
   weight?: ThemeFontWeights;
   family?: ThemeFontFamilies;
+  align?: 'left' | 'center' | 'right' | 'justify';
   tag?: ElementType;
   children?: ReactNode;
 };
@@ -23,10 +24,11 @@ const Text = ({
   color = 'text',
   weight = 'regular',
   family = 'primary',
+  align = 'left',
   tag,
   children
 }: TextProps) => (
-  <S.Wrapper as={tag} size={size} color={color} weight={weight} family={family}>
+  <S.Wrapper as={tag} {...{ size, color, weight, family, align }}>
     {children}
   </S.Wrapper>
 );

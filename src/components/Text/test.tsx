@@ -53,4 +53,12 @@ describe('<Text />', () => {
       fontWeight: theme.font.weights.bold
     });
   });
+
+  it('should render with a different alignment', () => {
+    renderWithTheme(<Text align="justify">Example text</Text>);
+
+    expect(screen.getByText('Example text')).toHaveStyle({
+      textAlign: 'justify'
+    });
+  });
 });

@@ -1,12 +1,12 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Hexagon from '.';
+import Hexagon, { HexagonProps } from '.';
 
 export default {
   title: 'Hexagon',
   component: Hexagon
 } as Meta;
 
-export const Default: Story = args => <Hexagon icon={args.icon} {...args} />;
+export const Default: Story<HexagonProps> = args => <Hexagon {...args} />;
 
 Default.args = {
   icon: 'github'
