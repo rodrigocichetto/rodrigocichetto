@@ -6,6 +6,7 @@ exports[`<Tag /> should render correctly 1`] = `
   font-family: Indie Flower;
   font-size: 1.6rem;
   font-weight: 400;
+  text-align: left;
 }
 
 .c1 strong {

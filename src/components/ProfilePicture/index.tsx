@@ -1,6 +1,6 @@
-import * as S from './styles';
-
 import { ThemeColors } from 'types/global';
+
+import * as S from './styles';
 
 export type ProfilePictureProps = {
   src: string;
