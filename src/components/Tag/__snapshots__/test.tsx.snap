@@ -2,7 +2,7 @@
 
 exports[`<Tag /> should render correctly 1`] = `
 .c1 {
-  color: #424656;
+  color: #FAFAFA;
   font-family: Indie Flower;
   font-size: 1.6rem;
   font-weight: 400;

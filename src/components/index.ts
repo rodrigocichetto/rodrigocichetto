@@ -1,3 +1,4 @@
+export { default as Absolute } from './Absolute';
 export { default as Hexagon } from './Hexagon';
 export { default as Icon } from './Icon';
 export { default as Menu } from './Menu';

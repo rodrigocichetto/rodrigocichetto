@@ -17,6 +17,7 @@ export type ProfileProps = {
   role?: string;
   tag?: string;
   nameTag?: string;
+  gamer?: boolean;
 };
 
 const Profile = ({
@@ -26,7 +27,8 @@ const Profile = ({
   socialLinks,
   role,
   tag,
-  nameTag
+  nameTag,
+  gamer
 }: ProfileProps) => (
   <S.Wrapper>
     {!!tag && (
@@ -37,7 +39,10 @@ const Profile = ({
 
     <S.Content>
       <S.InnerProfile>
-        <ProfilePicture src={picture} />
+        <ProfilePicture
+          src={picture}
+          color={gamer ? 'gamerProfileBackground' : 'menu'}
+        />
 
         <div>
           {!!nameTag && <Tag>{nameTag}</Tag>}
@@ -72,7 +77,7 @@ const Profile = ({
                 target="_blank"
                 rel="noreferrer"
               >
-                <Hexagon icon={social.icon} />
+                <Hexagon icon={social.icon} gamer={gamer} />
               </a>
             ))}
           </S.Social>

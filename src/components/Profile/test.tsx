@@ -40,4 +40,21 @@ describe('<Profile />', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('should render as gamer', () => {
+    const { container } = renderWithTheme(<Profile {...initialProps} gamer />);
+
+    expect(
+      screen.getByRole('heading', { name: initialProps.name })
+    ).toBeInTheDocument();
+
+    expect(
+      container.querySelectorAll('svg[aria-label="hexagon-gamer"]').length
+    ).toEqual(initialProps?.socialLinks?.length);
+    expect(
+      container.querySelector('span[color="gamerProfileBackground"]')
+    ).toBeInTheDocument();
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

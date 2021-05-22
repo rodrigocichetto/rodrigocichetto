@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ToggleTheme /> should render the heading 1`] = `
+exports[`<ToggleTheme /> should render correctly 1`] = `
 .c0 {
   cursor: pointer;
   border-radius: 1.6em;
@@ -10,7 +10,7 @@ exports[`<ToggleTheme /> should render the heading 1`] = `
   position: relative;
   height: 3rem;
   width: 5rem;
-  background-color: #0984e3;
+  background-color: #032b43;
 }
 
 .c0 svg {
@@ -44,7 +44,7 @@ exports[`<ToggleTheme /> should render the heading 1`] = `
   -webkit-transition: left 0.1s ease;
   transition: left 0.1s ease;
   top: 0.5rem;
-  left: 0.5rem;
+  left: 2.7rem;
 }
 
 <label

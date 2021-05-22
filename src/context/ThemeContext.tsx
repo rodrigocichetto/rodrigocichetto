@@ -3,6 +3,7 @@ import {
   useState,
   useContext,
   useCallback,
+  useEffect,
   ReactNode
 } from 'react';
 
@@ -14,6 +15,8 @@ import {
 import { light, dark } from 'styles/theme';
 
 import { ThemeTypes } from 'types/global';
+
+import { setStorageTheme, getStorageTheme } from 'utils/storage';
 
 type ContextData = {
   theme: DefaultTheme;
@@ -28,13 +31,21 @@ type ProviderData = {
 const ThemeContext = createContext<ContextData>({} as ContextData);
 
 const ThemeProvider = ({ children }: ProviderData) => {
-  const [selectedTheme, setSelectedTheme] = useState<ThemeTypes>('light');
+  const [selectedTheme, setSelectedTheme] = useState<ThemeTypes>('dark');
   const theme = selectedTheme === 'light' ? light : dark;
 
-  const toggleTheme = useCallback(
-    () => setSelectedTheme(selectedTheme === 'light' ? 'dark' : 'light'),
-    [selectedTheme]
-  );
+  useEffect(() => {
+    const storageTheme = getStorageTheme();
+
+    setSelectedTheme(storageTheme);
+  }, []);
+
+  const toggleTheme = useCallback(() => {
+    const newTheme = selectedTheme === 'light' ? 'dark' : 'light';
+
+    setSelectedTheme(newTheme);
+    setStorageTheme(newTheme);
+  }, [selectedTheme]);
 
   return (
     <ThemeContext.Provider value={{ theme, selectedTheme, toggleTheme }}>
