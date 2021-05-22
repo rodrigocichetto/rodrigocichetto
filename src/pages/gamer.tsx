@@ -1,26 +1,22 @@
 import { GetStaticProps } from 'next';
 
-import { Profile, ToggleTheme, Absolute, Menu, Tag } from 'components';
+import { Profile, ToggleTheme, Absolute, Menu } from 'components';
 
 import client from 'graphql/client';
-import GET_HOME_PAGE from 'graphql/queries/getHomePage';
+import GET_GAMER_PAGE from 'graphql/queries/getGamerPage';
 
-import { HomePageProps } from 'types/api';
+import { GamerPageProps } from 'types/api';
 
 import { getImageUrl } from 'utils/image';
 
-export const Home = ({
+export const Gamer = ({
   picture,
   name,
   description,
   role,
   socialLinks
-}: HomePageProps) => (
+}: GamerPageProps) => (
   <>
-    <Absolute top="1rem" left="1rem">
-      <Tag>body</Tag>
-    </Absolute>
-
     <Menu />
     <ToggleTheme absolute />
     <Absolute center top="45%">
@@ -32,24 +28,20 @@ export const Home = ({
           role,
           socialLinks
         }}
-        tag="main"
-        nameTag="h1"
+        gamer
       />
-    </Absolute>
-    <Absolute bottom="1rem" left="1rem">
-      <Tag>/body</Tag>
     </Absolute>
   </>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { homePage } = await client.request(GET_HOME_PAGE);
+  const { gamerPage } = await client.request(GET_GAMER_PAGE);
 
   return {
     props: {
-      ...homePage.profile
+      ...gamerPage.profile
     }
   };
 };
 
-export default Home;
+export default Gamer;

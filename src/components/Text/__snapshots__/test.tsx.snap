@@ -2,7 +2,7 @@
 
 exports[`<Text /> should render correctly 1`] = `
 .c0 {
-  color: #424656;
+  color: #FAFAFA;
   font-family: Lato;
   font-size: 1.6rem;
   font-weight: 400;
