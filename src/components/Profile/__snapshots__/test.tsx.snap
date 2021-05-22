@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Profile /> should render correctly 1`] = `
+exports[`<Profile /> should render as gamer 1`] = `
 .c15 {
   position: relative;
   display: -webkit-inline-box;
@@ -11,7 +11,7 @@ exports[`<Profile /> should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #424656;
+  color: #2c73d2;
 }
 
 .c19 {
@@ -129,7 +129,7 @@ exports[`<Profile /> should render correctly 1`] = `
 }
 
 .c9 {
-  background-color: #FAFAFA;
+  background-color: #343844;
   border-radius: 50%;
   cursor: pointer;
   height: 38rem;
@@ -145,7 +145,7 @@ exports[`<Profile /> should render correctly 1`] = `
 }
 
 .c3 {
-  color: #424656;
+  color: #FAFAFA;
   font-family: Indie Flower;
   font-size: 1.6rem;
   font-weight: 400;
@@ -157,7 +157,7 @@ exports[`<Profile /> should render correctly 1`] = `
 }
 
 .c10 {
-  color: #2C73D2;
+  color: #ABD9FF;
   font-family: Lato;
   font-size: 2.8rem;
   font-weight: 700;
@@ -169,7 +169,7 @@ exports[`<Profile /> should render correctly 1`] = `
 }
 
 .c11 {
-  color: #424656;
+  color: #FAFAFA;
   font-family: Indie Flower;
   font-size: 1.6rem;
   font-weight: 700;
@@ -181,7 +181,533 @@ exports[`<Profile /> should render correctly 1`] = `
 }
 
 .c13 {
-  color: #424656;
+  color: #FAFAFA;
+  font-family: Indie Flower;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.c13 strong {
+  font-weight: 700;
+}
+
+.c0 {
+  position: relative;
+  max-width: 55rem;
+}
+
+.c1 {
+  position: absolute;
+  top: 0.8rem;
+}
+
+.c20 {
+  position: absolute;
+  bottom: -4.8rem;
+}
+
+.c4 {
+  position: relative;
+  padding: 0 3.2rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 > div:nth-child(2) {
+  margin-top: 3.2rem;
+}
+
+.c12 {
+  padding: 0 3.2rem;
+}
+
+.c12 > p {
+  margin-bottom: 2.4rem;
+  padding: 0 2.4rem;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+<section
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+        color="text"
+      >
+        &lt;
+        main
+        &gt;
+      </span>
+    </div>
+  </div>
+  <div
+    class="c4"
+  >
+    <div
+      class="c5"
+    >
+      <div
+        class="c6"
+      >
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+              color="gamerProfileBackground"
+            />
+            <img
+              src="/img/profile-pic.png"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="c2"
+        >
+          <span
+            class="c3"
+            color="text"
+          >
+            &lt;
+            h1
+            &gt;
+          </span>
+        </div>
+        <h1
+          class="c10"
+          color="primary"
+        >
+          Rodrigo Cichetto
+        </h1>
+        <p
+          class="c11"
+          color="text"
+        >
+          Dev. Front-End
+        </p>
+        <div
+          class="c2"
+        >
+          <span
+            class="c3"
+            color="text"
+          >
+            &lt;
+            /
+            h1
+            &gt;
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c12"
+    >
+      <p
+        class="c13"
+        color="text"
+      >
+        Descrição
+      </p>
+      <div
+        class="c14"
+      >
+        <a
+          href="#"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <div
+            class="c15"
+          >
+            <div
+              class="c16"
+            >
+              <div
+                class="c17"
+                color="white"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="github"
+                  class="c18"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 012.496-.336 9.554 9.554 0 012.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="c19"
+            >
+              <svg
+                aria-label="hexagon-gamer"
+                viewBox="0 0 86.6 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <lineargradient
+                  gradientUnits="userSpaceOnUse"
+                  id="a"
+                  x1="0"
+                  x2="86.603"
+                  y1="50"
+                  y2="50"
+                >
+                  <stop
+                    offset="0"
+                    stop-color="#f79533"
+                  />
+                  <stop
+                    offset=".2"
+                    stop-color="#f37055"
+                  />
+                  <stop
+                    offset=".4"
+                    stop-color="#ef4e7b"
+                  />
+                  <stop
+                    offset=".6"
+                    stop-color="#a166ab"
+                  />
+                  <stop
+                    offset=".8"
+                    stop-color="#5073b8"
+                  />
+                  <stop
+                    offset="1"
+                    stop-color="#1098ad"
+                  />
+                </lineargradient>
+                <path
+                  d="M34.6 5C40.4 1.7 46.2 1.7 52 5l26 15c5.8 3.3 8.7 8.3 8.7 15v30c0 6.7-2.9 11.7-8.7 15L52 95c-5.8 3.3-11.5 3.3-17.3 0l-26-15C2.9 76.7 0 71.7 0 65V35c0-6.7 2.9-11.7 8.7-15L34.6 5z"
+                  fill="url(#a)"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
+        <a
+          href="#"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <div
+            class="c15"
+          >
+            <div
+              class="c16"
+            >
+              <div
+                class="c17"
+                color="white"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="linkedin"
+                  class="c18"
+                  fill="currentColor"
+                  focusable="false"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 3c0 1.1-.7 2-2 2-1.2 0-2-.9-2-1.9C1 2 1.8 1 3 1s2 .9 2 2zM1 19h4V6H1v13zM14.6 6.2c-2.1 0-3.3 1.2-3.8 2h-.1l-.2-1.7H6.9c0 1.1.1 2.4.1 3.9V19h4v-7.1c0-.4 0-.7.1-1 .3-.7.8-1.6 1.9-1.6 1.4 0 2 1.2 2 2.8V19h4v-7.4c0-3.7-1.9-5.4-4.4-5.4z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="c19"
+            >
+              <svg
+                aria-label="hexagon-gamer"
+                viewBox="0 0 86.6 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <lineargradient
+                  gradientUnits="userSpaceOnUse"
+                  id="a"
+                  x1="0"
+                  x2="86.603"
+                  y1="50"
+                  y2="50"
+                >
+                  <stop
+                    offset="0"
+                    stop-color="#f79533"
+                  />
+                  <stop
+                    offset=".2"
+                    stop-color="#f37055"
+                  />
+                  <stop
+                    offset=".4"
+                    stop-color="#ef4e7b"
+                  />
+                  <stop
+                    offset=".6"
+                    stop-color="#a166ab"
+                  />
+                  <stop
+                    offset=".8"
+                    stop-color="#5073b8"
+                  />
+                  <stop
+                    offset="1"
+                    stop-color="#1098ad"
+                  />
+                </lineargradient>
+                <path
+                  d="M34.6 5C40.4 1.7 46.2 1.7 52 5l26 15c5.8 3.3 8.7 8.3 8.7 15v30c0 6.7-2.9 11.7-8.7 15L52 95c-5.8 3.3-11.5 3.3-17.3 0l-26-15C2.9 76.7 0 71.7 0 65V35c0-6.7 2.9-11.7 8.7-15L34.6 5z"
+                  fill="url(#a)"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c20"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+        color="text"
+      >
+        &lt;
+        /
+        main
+        &gt;
+      </span>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`<Profile /> should render correctly 1`] = `
+.c15 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #2c73d2;
+}
+
+.c19 {
+  display: contents;
+}
+
+.c19 svg {
+  -webkit-filter: drop-shadow(rgba(0,0,0,0.3) 0 0.1rem 0.15rem);
+  filter: drop-shadow(rgba(0,0,0,0.3) 0 0.1rem 0.15rem);
+  height: 5rem;
+}
+
+.c16 {
+  position: absolute;
+  z-index: 10;
+  width: 100% !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c18 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c17 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #FAFAFA;
+  font-size: 2.4rem;
+}
+
+.c17 svg {
+  height: 2.4rem;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 25rem;
+  height: 30rem;
+}
+
+.c7 {
+  border-radius: 50%;
+  height: 31.2rem;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform: scale(0.48);
+  -ms-transform: scale(0.48);
+  transform: scale(0.48);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4,0,0.2,1);
+  -webkit-transition: transform 250ms cubic-bezier(0.4,0,0.2,1);
+  transition: transform 250ms cubic-bezier(0.4,0,0.2,1);
+  width: 40rem;
+}
+
+.c7:hover {
+  -webkit-transform: scale(0.54);
+  -ms-transform: scale(0.54);
+  transform: scale(0.54);
+}
+
+.c7:hover img {
+  width: 42rem;
+  left: -0.5rem;
+  top: 16rem;
+}
+
+.c7 img {
+  pointer-events: none;
+  position: relative;
+  -webkit-transform: translateY(2rem) scale(1.15);
+  -ms-transform: translateY(2rem) scale(1.15);
+  transform: translateY(2rem) scale(1.15);
+  -webkit-transform-origin: 50% bottom;
+  -ms-transform-origin: 50% bottom;
+  transform-origin: 50% bottom;
+  -webkit-transition: width 300ms cubic-bezier(0.4,0,0.2,1),top 300ms cubic-bezier(0.4,0,0.2,1),left 300ms cubic-bezier(0.4,0,0.2,1);
+  transition: width 300ms cubic-bezier(0.4,0,0.2,1),top 300ms cubic-bezier(0.4,0,0.2,1),left 300ms cubic-bezier(0.4,0,0.2,1);
+  left: 0.5rem;
+  top: 19rem;
+  width: 40rem;
+}
+
+.c8 {
+  -webkit-clip-path: path( 'M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z' );
+  clip-path: path( 'M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z' );
+  position: relative;
+  -webkit-transform-origin: 50%;
+  -ms-transform-origin: 50%;
+  transform-origin: 50%;
+  top: -20rem;
+}
+
+.c9 {
+  background-color: #343844;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 38rem;
+  left: 1rem;
+  pointer-events: none;
+  position: absolute;
+  top: 21rem;
+  width: 38rem;
+}
+
+.c2 {
+  opacity: 0.5;
+}
+
+.c3 {
+  color: #FAFAFA;
+  font-family: Indie Flower;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.c3 strong {
+  font-weight: 700;
+}
+
+.c10 {
+  color: #ABD9FF;
+  font-family: Lato;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.c10 strong {
+  font-weight: 700;
+}
+
+.c11 {
+  color: #FAFAFA;
+  font-family: Indie Flower;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.c11 strong {
+  font-weight: 700;
+}
+
+.c13 {
+  color: #FAFAFA;
   font-family: Indie Flower;
   font-size: 1.6rem;
   font-weight: 400;
@@ -379,6 +905,7 @@ exports[`<Profile /> should render correctly 1`] = `
               class="c19"
             >
               <svg
+                aria-label="hexagon"
                 version="1.1"
                 viewBox="0 0 86.60254037844386 100"
                 xmlns="http://www.w3.org/2000/svg"
@@ -425,6 +952,7 @@ exports[`<Profile /> should render correctly 1`] = `
               class="c19"
             >
               <svg
+                aria-label="hexagon"
                 version="1.1"
                 viewBox="0 0 86.60254037844386 100"
                 xmlns="http://www.w3.org/2000/svg"

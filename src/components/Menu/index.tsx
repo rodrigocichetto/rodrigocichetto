@@ -14,11 +14,11 @@ export type MenuPage = {
 };
 
 export const PAGES: MenuPage[] = [
-  {
-    path: '/xp',
-    icon: 'xp',
-    label: 'Experiência'
-  },
+  // {
+  //   path: '/xp',
+  //   icon: 'xp',
+  //   label: 'Experiência'
+  // },
   {
     path: '/',
     icon: 'user',

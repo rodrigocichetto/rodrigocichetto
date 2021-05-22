@@ -61,6 +61,7 @@ export const light = {
     background: '#F4F9FF',
     text: '#424656',
     menu: '#FAFAFA',
+    gamerProfileBackground: '#2C73D2',
     activeTheme: '#0984e3'
   }
 };
@@ -74,8 +75,9 @@ export const dark = {
     background: '#424656',
     text: '#FAFAFA',
     menu: '#343844',
+    gamerProfileBackground: '#343844',
     activeTheme: '#032b43'
   }
 };
 
-export default light;
+export default dark;

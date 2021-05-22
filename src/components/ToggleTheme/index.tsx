@@ -10,7 +10,7 @@ const ToggleTheme = ({ absolute }: ToggleThemeProps) => {
   const { selectedTheme, toggleTheme } = useTheme();
 
   return (
-    <S.Wrapper selectedTheme={selectedTheme} absolute={absolute}>
+    <S.Wrapper selectedTheme={selectedTheme || 'dark'} absolute={absolute}>
       <S.Input type="checkbox" onChange={toggleTheme} />
       <svg
         version="1.1"
@@ -38,7 +38,7 @@ const ToggleTheme = ({ absolute }: ToggleThemeProps) => {
         <path d="M16.001 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 7.999-3.582 7.999-8s-3.581-8-7.999-8v0zM14 2c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM4 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM2 14c1.105 0 2 0.895 2 2 0 1.107-0.895 2-2 2s-2-0.893-2-2c0-1.105 0.895-2 2-2zM4 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM14 30c0-1.109 0.895-2 2-2 1.108 0 2 0.891 2 2 0 1.102-0.892 2-2 2-1.105 0-2-0.898-2-2zM24 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM30 18c-1.104 0-2-0.896-2-2 0-1.107 0.896-2 2-2s2 0.893 2 2c0 1.104-0.896 2-2 2zM24 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2z"></path>
       </svg>
 
-      <S.ToggleButton selectedTheme={selectedTheme} />
+      <S.ToggleButton selectedTheme={selectedTheme || 'dark'} />
     </S.Wrapper>
   );
 };

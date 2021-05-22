@@ -69,7 +69,7 @@ exports[`<ProfilePicture /> should render correctly 1`] = `
 }
 
 .c3 {
-  background-color: #FAFAFA;
+  background-color: #343844;
   border-radius: 50%;
   cursor: pointer;
   height: 38rem;

@@ -1,17 +1,17 @@
 import { fireEvent } from '@testing-library/react';
 
-import theme from 'styles/theme';
+import theme, { light } from 'styles/theme';
 
 import { renderWithTheme } from 'utils/tests/helpers';
 
 import ToggleTheme from '.';
 
 describe('<ToggleTheme />', () => {
-  it('should render the heading', () => {
+  it('should render correctly', () => {
     const { container } = renderWithTheme(<ToggleTheme />);
 
     expect(container.firstChild).toHaveStyle({
-      backgroundColor: '#0984e3'
+      backgroundColor: theme.colors.activeTheme
     });
 
     expect(container.firstChild).toMatchSnapshot();
@@ -23,7 +23,7 @@ describe('<ToggleTheme />', () => {
     fireEvent.click(container.firstChild!);
 
     expect(container.firstChild).toHaveStyle({
-      backgroundColor: '#032b43'
+      backgroundColor: light.colors.activeTheme
     });
   });
 
