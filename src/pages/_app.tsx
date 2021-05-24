@@ -25,10 +25,6 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content={theme.colors.background} />
-        <meta
-          property="og:image"
-          content="https://rodrigocichetto.s3.us-east-2.amazonaws.com/social-share.jpg"
-        />
       </Head>
 
       <NextSeo
