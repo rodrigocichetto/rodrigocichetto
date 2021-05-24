@@ -74,7 +74,10 @@ exports[`<Profile /> should render as gamer 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 25rem;
-  height: 30rem;
+  height: 23rem;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .c7 {
@@ -121,11 +124,11 @@ exports[`<Profile /> should render as gamer 1`] = `
 .c8 {
   -webkit-clip-path: path( 'M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z' );
   clip-path: path( 'M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z' );
-  position: relative;
+  position: absolute;
   -webkit-transform-origin: 50%;
   -ms-transform-origin: 50%;
   transform-origin: 50%;
-  top: -20rem;
+  top: -25rem;
 }
 
 .c9 {
@@ -199,17 +202,17 @@ exports[`<Profile /> should render as gamer 1`] = `
 
 .c1 {
   position: absolute;
-  top: 0.8rem;
+  top: 1.6rem;
 }
 
 .c20 {
   position: absolute;
-  bottom: -4.8rem;
+  bottom: -3.2rem;
 }
 
 .c4 {
   position: relative;
-  padding: 0 3.2rem;
+  padding: 0 2.4rem;
 }
 
 .c5 {
@@ -221,19 +224,17 @@ exports[`<Profile /> should render as gamer 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c5 > div:nth-child(2) {
-  margin-top: 3.2rem;
-}
-
-.c12 {
-  padding: 0 3.2rem;
+  margin: 0 0 1.6rem;
 }
 
 .c12 > p {
   margin-bottom: 2.4rem;
-  padding: 0 2.4rem;
 }
 
 .c14 {
@@ -245,6 +246,71 @@ exports[`<Profile /> should render as gamer 1`] = `
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
+}
+
+@media (min-width:768px) {
+  .c6 {
+    height: 25rem;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    top: 0.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c20 {
+    bottom: -4.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    padding: 0 3.2rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .c5 > div:nth-child(2) {
+    margin: 3.2rem 0 0;
+  }
+}
+
+@media (max-width:768px) {
+  .c5 {
+    font-size: 1.4rem;
+  }
+
+  .c5 > h1 {
+    font-size: 2.0rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c12 {
+    padding: 0 3.2rem;
+  }
+
+  .c12 > p {
+    padding: 0 2.4rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c12 > p {
+    font-size: 1.4rem;
+  }
 }
 
 <section
@@ -600,7 +666,10 @@ exports[`<Profile /> should render correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 25rem;
-  height: 30rem;
+  height: 23rem;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .c7 {
@@ -647,11 +716,11 @@ exports[`<Profile /> should render correctly 1`] = `
 .c8 {
   -webkit-clip-path: path( 'M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z' );
   clip-path: path( 'M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z' );
-  position: relative;
+  position: absolute;
   -webkit-transform-origin: 50%;
   -ms-transform-origin: 50%;
   transform-origin: 50%;
-  top: -20rem;
+  top: -25rem;
 }
 
 .c9 {
@@ -725,17 +794,17 @@ exports[`<Profile /> should render correctly 1`] = `
 
 .c1 {
   position: absolute;
-  top: 0.8rem;
+  top: 1.6rem;
 }
 
 .c20 {
   position: absolute;
-  bottom: -4.8rem;
+  bottom: -3.2rem;
 }
 
 .c4 {
   position: relative;
-  padding: 0 3.2rem;
+  padding: 0 2.4rem;
 }
 
 .c5 {
@@ -747,19 +816,17 @@ exports[`<Profile /> should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c5 > div:nth-child(2) {
-  margin-top: 3.2rem;
-}
-
-.c12 {
-  padding: 0 3.2rem;
+  margin: 0 0 1.6rem;
 }
 
 .c12 > p {
   margin-bottom: 2.4rem;
-  padding: 0 2.4rem;
 }
 
 .c14 {
@@ -771,6 +838,71 @@ exports[`<Profile /> should render correctly 1`] = `
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
+}
+
+@media (min-width:768px) {
+  .c6 {
+    height: 25rem;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    top: 0.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c20 {
+    bottom: -4.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    padding: 0 3.2rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .c5 > div:nth-child(2) {
+    margin: 3.2rem 0 0;
+  }
+}
+
+@media (max-width:768px) {
+  .c5 {
+    font-size: 1.4rem;
+  }
+
+  .c5 > h1 {
+    font-size: 2.0rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c12 {
+    padding: 0 3.2rem;
+  }
+
+  .c12 > p {
+    padding: 0 2.4rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c12 > p {
+    font-size: 1.4rem;
+  }
 }
 
 <section

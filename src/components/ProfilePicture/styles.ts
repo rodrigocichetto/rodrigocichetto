@@ -1,13 +1,26 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 import { ProfilePictureProps } from '.';
+
+// const wrapperModifiers = {
+//   small: () => css`
+//     transform: scale(0.8);
+//   `
+// };
 
 export const Wrapper = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
   width: 25rem;
-  height: 30rem;
+  height: 23rem;
+  transform: scale(0.8);
+
+  ${media.greaterThan('medium')`
+    height: 25rem;
+    transform: scale(1);
+  `}
 `;
 
 export const Container = styled.div`
@@ -49,9 +62,9 @@ export const ContainerInner = styled.div`
   clip-path: path(
     'M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z'
   );
-  position: relative;
+  position: absolute;
   transform-origin: 50%;
-  top: -20rem;
+  top: -25rem;
 `;
 
 type CircleProps = Omit<ProfilePictureProps, 'src'>;

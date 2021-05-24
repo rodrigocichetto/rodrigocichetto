@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.section`
   position: relative;
@@ -11,11 +12,19 @@ type TagWrapperProps = {
 
 const tagWrapperModifiers = {
   top: (theme: DefaultTheme) => css`
-    top: ${theme.spacings.xxsmall};
+    top: ${theme.spacings.xsmall};
+
+    ${media.greaterThan('medium')`
+      top: ${theme.spacings.xxsmall};
+    `}
   `,
 
   bottom: (theme: DefaultTheme) => css`
-    bottom: -${theme.spacings.xlarge};
+    bottom: -${theme.spacings.medium};
+
+    ${media.greaterThan('medium')`
+      bottom: -${theme.spacings.xlarge};
+    `}
   `
 };
 
@@ -32,7 +41,11 @@ export const TagWrapper = styled.div<TagWrapperProps>`
 export const Content = styled.div`
   ${({ theme }) => css`
     position: relative;
-    padding: 0 ${theme.spacings.medium};
+    padding: 0 ${theme.spacings.small};
+
+    ${media.greaterThan('medium')`
+      padding: 0 ${theme.spacings.medium};
+    `}
   `}
 `;
 
@@ -40,21 +53,49 @@ export const InnerProfile = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
+    flex-direction: column;
 
     & > div:nth-child(2) {
-      margin-top: ${theme.spacings.medium};
+      margin: 0 0 ${theme.spacings.xsmall};
     }
+
+    ${media.greaterThan('medium')`
+      flex-direction: row;
+
+      & > div:nth-child(2) {
+        margin: ${theme.spacings.medium} 0 0;
+      }
+    `}
+
+    ${media.lessThan('medium')`
+      font-size: ${theme.font.sizes.small};
+
+      & > h1 {
+        font-size: ${theme.font.sizes.large};
+      }
+    `}
   `}
 `;
 
 export const Info = styled.div`
   ${({ theme }) => css`
-    padding: 0 ${theme.spacings.medium};
-
     & > p {
       margin-bottom: ${theme.spacings.small};
-      padding: 0 ${theme.spacings.small};
     }
+
+    ${media.greaterThan('medium')`
+      padding: 0 ${theme.spacings.medium};
+
+      & > p {
+        padding: 0 ${theme.spacings.small};
+      }
+    `}
+
+    ${media.lessThan('medium')`
+      & > p {
+        font-size: ${theme.font.sizes.small};
+      }
+    `}
   `}
 `;
 

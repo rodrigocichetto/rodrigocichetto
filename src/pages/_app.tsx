@@ -8,7 +8,16 @@ import theme from 'styles/theme';
 
 import { ThemeProvider } from 'context/ThemeContext';
 
+const consoleStyle = [
+  'background-image: url("https://rodrigocichetto.s3.us-east-2.amazonaws.com/console.gif")',
+  'background-size: cover',
+  'padding: 50px'
+].join(';');
+
 function App({ Component, pageProps }: AppProps) {
+  console.info('hello dev %s', '🚀');
+  console.info('%c ', consoleStyle);
+
   return (
     <ThemeProvider>
       <Head>
@@ -16,6 +25,10 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content={theme.colors.background} />
+        <meta
+          property="og:image"
+          content="https://rodrigocichetto.s3.us-east-2.amazonaws.com/social-share.jpg"
+        />
       </Head>
 
       <NextSeo

@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 
 export const Wrapper = styled.nav`
   ${({ theme }) => css`
     display: flex;
-    position: absolute;
+    position: fixed;
     box-shadow: ${theme.shadow};
     padding: ${theme.spacings.xsmall};
     background: ${theme.colors.menu};
@@ -11,10 +12,21 @@ export const Wrapper = styled.nav`
     bottom: ${theme.spacings.small};
     left: 50%;
     transform: translateX(-50%);
+    z-index: ${theme.layers.menu};
 
     & > * {
       margin: 0 ${theme.spacings.xsmall};
     }
+
+    ${media.greaterThan('medium')`
+      position: absolute;
+    `}
+
+    ${media.lessThan('medium')`
+      svg {
+        height: ${theme.font.sizes.large};
+      }
+    `}
   `}
 `;
 

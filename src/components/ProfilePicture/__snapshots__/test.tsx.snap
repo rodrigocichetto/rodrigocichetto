@@ -14,7 +14,10 @@ exports[`<ProfilePicture /> should render correctly 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 25rem;
-  height: 30rem;
+  height: 23rem;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .c1 {
@@ -61,11 +64,11 @@ exports[`<ProfilePicture /> should render correctly 1`] = `
 .c2 {
   -webkit-clip-path: path( 'M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z' );
   clip-path: path( 'M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z' );
-  position: relative;
+  position: absolute;
   -webkit-transform-origin: 50%;
   -ms-transform-origin: 50%;
   transform-origin: 50%;
-  top: -20rem;
+  top: -25rem;
 }
 
 .c3 {
@@ -78,6 +81,15 @@ exports[`<ProfilePicture /> should render correctly 1`] = `
   position: absolute;
   top: 21rem;
   width: 38rem;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    height: 25rem;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 <div
