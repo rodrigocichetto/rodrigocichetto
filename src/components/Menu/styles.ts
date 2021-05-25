@@ -13,6 +13,7 @@ export const Wrapper = styled.nav`
     left: 50%;
     transform: translateX(-50%);
     z-index: ${theme.layers.menu};
+    transition: all 0.3s ease-in-out;
 
     & > * {
       margin: 0 ${theme.spacings.xsmall};
@@ -20,6 +21,10 @@ export const Wrapper = styled.nav`
 
     ${media.greaterThan('medium')`
       position: absolute;
+
+      &:hover {
+        bottom: ${theme.spacings.medium};
+      }
     `}
 
     ${media.lessThan('medium')`
@@ -41,9 +46,14 @@ type LinkWrapperProps = {
 };
 
 export const LinkWrapper = styled.div<LinkWrapperProps>`
-  ${({ active }) => css`
+  ${({ theme, active }) => css`
     cursor: pointer;
     opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-${theme.spacings.xxsmall});
+    }
 
     ${!!active && linkModifiers.active()}
   `}

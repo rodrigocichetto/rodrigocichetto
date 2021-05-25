@@ -1,12 +1,16 @@
+import { useRef, useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
+import { AnimatePresence } from 'framer-motion';
 
 import GlobalStyles from 'styles/global';
 
 import theme from 'styles/theme';
 
 import { ThemeProvider } from 'context/ThemeContext';
+
+import { Welcome } from 'components';
 
 const consoleStyle = [
   'background-image: url("https://rodrigocichetto.s3.us-east-2.amazonaws.com/console.gif")',
@@ -15,8 +19,21 @@ const consoleStyle = [
 ].join(';');
 
 function App({ Component, pageProps }: AppProps) {
-  console.info('hello dev %s', '🚀');
-  console.info('%c ', consoleStyle);
+  const firstRender = useRef(true);
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      console.info('hello dev %s', '🚀');
+      console.info(
+        'Do you want to access the storybook? %s follow the link https://rodrigocichetto.github.io/rodrigocichetto/ ',
+        '📚'
+      );
+      console.info('%c ', consoleStyle);
+    }
+
+    firstRender.current = false;
+  }, []);
 
   return (
     <ThemeProvider>
@@ -53,7 +70,13 @@ function App({ Component, pageProps }: AppProps) {
 
       <GlobalStyles />
 
-      <Component {...pageProps} />
+      <AnimatePresence>
+        {showWelcome ? (
+          <Welcome onComplete={() => setShowWelcome(false)} />
+        ) : (
+          <Component {...pageProps} />
+        )}
+      </AnimatePresence>
     </ThemeProvider>
   );
 }

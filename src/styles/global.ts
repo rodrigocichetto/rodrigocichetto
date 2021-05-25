@@ -67,8 +67,10 @@ ${({ theme }) => css`
   }
 
   body {
-    background: ${theme.colors.background};
+    background-color: ${theme.colors.background};
     font-family: ${theme.font.family};
+
+    transition: background-color 0.2s ease-in-out;
   }
 `}
 `;

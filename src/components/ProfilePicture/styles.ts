@@ -87,6 +87,7 @@ export const Circle = styled.span<CircleProps>`
     position: absolute;
     top: 21rem;
     width: 38rem;
+    transition: background-color 0.4s ease-in-out;
 
     ${!!background && circleModifiers.background(background)}
   `}

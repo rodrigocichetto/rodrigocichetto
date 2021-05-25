@@ -9,6 +9,7 @@ export const Wrapper = styled.p<TextProps>`
     font-size: ${theme.font.sizes[size!]};
     font-weight: ${theme.font.weights[weight!]};
     text-align: ${align};
+    transition: color 0.4s ease-in-out;
 
     strong {
       font-weight: ${theme.font.weights.bold};

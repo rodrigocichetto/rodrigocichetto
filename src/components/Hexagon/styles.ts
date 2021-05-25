@@ -12,6 +12,11 @@ export const Wrapper = styled.div<WrapperProps>`
     display: inline-flex;
     align-items: center;
     color: ${theme.colors[background!]};
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.15);
+    }
   `}
 `;
 

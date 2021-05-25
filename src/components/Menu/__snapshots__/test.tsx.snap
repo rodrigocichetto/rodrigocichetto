@@ -36,6 +36,8 @@ exports[`<Menu /> should render correctly 1`] = `
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 20;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .c0 > * {
@@ -45,11 +47,23 @@ exports[`<Menu /> should render correctly 1`] = `
 .c1 {
   cursor: pointer;
   opacity: 0.5;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.c1:hover {
+  -webkit-transform: translateY(-0.8rem);
+  -ms-transform: translateY(-0.8rem);
+  transform: translateY(-0.8rem);
 }
 
 @media (min-width:768px) {
   .c0 {
     position: absolute;
+  }
+
+  .c0:hover {
+    bottom: 3.2rem;
   }
 }
 

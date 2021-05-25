@@ -34,6 +34,7 @@ export const Wrapper = styled.label<WrapperProps>`
     position: relative;
     height: 3rem;
     width: 5rem;
+    z-index: ${theme.layers.menu};
 
     svg {
       position: absolute;

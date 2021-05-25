@@ -10,6 +10,7 @@ exports[`<ToggleTheme /> should render correctly 1`] = `
   position: relative;
   height: 3rem;
   width: 5rem;
+  z-index: 20;
   background-color: #032b43;
 }
 

@@ -31,6 +31,14 @@ exports[`<Hexagon /> should render as gamer 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #2c73d2;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
 }
 
 .c4 {
@@ -169,6 +177,14 @@ exports[`<Hexagon /> should render correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #2c73d2;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
 }
 
 .c4 {

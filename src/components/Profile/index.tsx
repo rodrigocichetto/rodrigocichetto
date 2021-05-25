@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import { ProfilePicture, Tag, Text, Hexagon } from 'components';
 
 import { AvailableIcons } from 'types/global';
@@ -38,51 +40,68 @@ const Profile = ({
     )}
 
     <S.Content>
-      <S.InnerProfile>
-        <ProfilePicture
-          src={picture}
-          color={gamer ? 'gamerProfileBackground' : 'menu'}
-        />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 0.5 } }}
+      >
+        <S.InnerProfile>
+          <ProfilePicture
+            src={picture}
+            color={gamer ? 'gamerProfileBackground' : 'menu'}
+          />
 
-        <div>
-          {!!nameTag && <Tag>{nameTag}</Tag>}
+          <div>
+            {!!nameTag && <Tag>{nameTag}</Tag>}
 
-          <Text tag="h1" size="xxlarge" weight="bold" color="primary">
-            {name}
-          </Text>
+            <Text tag="h1" size="xxlarge" weight="bold" color="primary">
+              {name}
+            </Text>
 
-          {!!role && (
-            <Text family="secondary" weight="bold">
-              {role}
+            {!!role && (
+              <Text family="secondary" weight="bold">
+                {role}
+              </Text>
+            )}
+
+            {!!nameTag && <Tag>/{nameTag}</Tag>}
+          </div>
+        </S.InnerProfile>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { delay: 1.5 } }}
+      >
+        <S.Info>
+          {!!description && (
+            <Text family="secondary" align="justify">
+              {description}
             </Text>
           )}
 
-          {!!nameTag && <Tag>/{nameTag}</Tag>}
-        </div>
-      </S.InnerProfile>
-
-      <S.Info>
-        {!!description && (
-          <Text family="secondary" align="justify">
-            {description}
-          </Text>
-        )}
-
-        {!!socialLinks && (
-          <S.Social>
-            {socialLinks.map(social => (
-              <a
-                key={social.icon}
-                href={social.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Hexagon icon={social.icon} gamer={gamer} />
-              </a>
-            ))}
-          </S.Social>
-        )}
-      </S.Info>
+          {!!socialLinks && (
+            <S.Social>
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.icon}
+                  href={social.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  initial={{
+                    scale: 0
+                  }}
+                  animate={{
+                    scale: 1,
+                    transition: { delay: index * 0.2 + 1.5 }
+                  }}
+                >
+                  <Hexagon icon={social.icon} gamer={gamer} />
+                </motion.a>
+              ))}
+            </S.Social>
+          )}
+        </S.Info>
+      </motion.div>
     </S.Content>
 
     {!!tag && (

@@ -12,7 +12,8 @@ export const Default: Story<ProfilePictureProps> = args => (
 );
 
 Default.args = {
-  src: '/img/profile-pic.png'
+  src:
+    'https://rodrigocichetto.s3.us-east-2.amazonaws.com/IMG_0286-SQUARE-ZOOM_OUT.png'
 };
 
 export const WithCircleImage: Story<ProfilePictureProps> = args => (
@@ -20,6 +21,8 @@ export const WithCircleImage: Story<ProfilePictureProps> = args => (
 );
 
 WithCircleImage.args = {
-  src: '/img/profile-pic.png',
-  background: '/img/profile-bg.png'
+  src:
+    'https://rodrigocichetto.s3.us-east-2.amazonaws.com/IMG_0286-SQUARE-ZOOM_OUT.png',
+  background:
+    'https://rodrigocichetto.s3.us-east-2.amazonaws.com/profile-bg.png'
 };

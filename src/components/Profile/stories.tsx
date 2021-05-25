@@ -10,7 +10,8 @@ export default {
 export const Default: Story<ProfileProps> = args => <Profile {...args} />;
 
 Default.args = {
-  picture: '/img/profile-pic.png',
+  picture:
+    'https://rodrigocichetto.s3.us-east-2.amazonaws.com/IMG_0286-SQUARE-ZOOM_OUT.png',
   name: 'Rodrigo Cichetto',
   role: 'Dev. Front-End',
   tag: 'main',
