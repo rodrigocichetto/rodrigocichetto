@@ -1,6 +1,6 @@
-import { renderWithTheme } from 'utils/tests/helpers';
+import { renderWithTheme } from '@/utils/tests/helpers';
 
-import Absolute from '.';
+import Absolute from './component';
 
 describe('<Absolute />', () => {
   it('should render correctly', () => {

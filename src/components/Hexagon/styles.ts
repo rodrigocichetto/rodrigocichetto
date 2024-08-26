@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { ThemeColors } from 'types/global';
+import { ThemeColors } from '@/types/global';
 
 type WrapperProps = {
   background: ThemeColors;

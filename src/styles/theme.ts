@@ -9,8 +9,8 @@ const defaultTheme = {
   shadow: '0 0 5rem rgba(0,0,0, 0.1)',
   font: {
     family:
-      "Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-    primary: 'Lato',
+      "JetBrainsMono, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+    primary: 'JetBrainsMono',
     secondary: 'Indie Flower',
     sizes: {
       xsmall: '1.2rem',

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { AbsoluteProps } from '.';
+import { AbsoluteProps } from './component';
 
 const wrapperModifiers = {
   center: () => css`

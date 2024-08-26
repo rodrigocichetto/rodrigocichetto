@@ -3,7 +3,11 @@ import media from 'styled-media-query';
 
 export const Wrapper = styled.section`
   position: relative;
-  max-width: 55rem;
+  width: 80vw;
+
+  ${media.greaterThan('medium')`
+    max-width: 60rem;
+  `}
 `;
 
 type TagWrapperProps = {
@@ -54,24 +58,26 @@ export const InnerProfile = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: ${theme.font.sizes.small};
 
     & > div:nth-child(2) {
       margin: 0 0 ${theme.spacings.xsmall};
     }
 
+    & > h1 {
+      font-size: ${theme.font.sizes.large};
+    }
+
     ${media.greaterThan('medium')`
       flex-direction: row;
+      font-size: ${theme.font.sizes.medium};
+
+      & > h1 {
+        font-size: ${theme.font.sizes.xxlarge};
+      }
 
       & > div:nth-child(2) {
         margin: ${theme.spacings.medium} 0 0;
-      }
-    `}
-
-    ${media.lessThan('medium')`
-      font-size: ${theme.font.sizes.small};
-
-      & > h1 {
-        font-size: ${theme.font.sizes.large};
       }
     `}
   `}
@@ -80,6 +86,7 @@ export const InnerProfile = styled.div`
 export const Info = styled.div`
   ${({ theme }) => css`
     & > p {
+      font-size: ${theme.font.sizes.small};
       margin-bottom: ${theme.spacings.small};
     }
 
@@ -87,19 +94,20 @@ export const Info = styled.div`
       padding: 0 ${theme.spacings.medium};
 
       & > p {
+        font-size: ${theme.font.sizes.medium};
         padding: 0 ${theme.spacings.small};
-      }
-    `}
-
-    ${media.lessThan('medium')`
-      & > p {
-        font-size: ${theme.font.sizes.small};
       }
     `}
   `}
 `;
 
-export const Social = styled.div`
-  display: flex;
-  justify-content: space-around;
+type SocialProps = {
+  evenly?: boolean;
+};
+
+export const Social = styled.div<SocialProps>`
+  ${({ evenly }) => css`
+    display: flex;
+    justify-content: ${evenly ? 'space-evenly' : 'space-around'};
+  `}
 `;
