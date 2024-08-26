@@ -15,6 +15,10 @@ export const Wrapper = styled.nav`
     z-index: ${theme.layers.menu};
     transition: all 0.3s ease-in-out;
 
+    svg {
+      height: ${theme.font.sizes.medium};
+    }
+
     & > * {
       margin: 0 ${theme.spacings.xsmall};
     }
@@ -25,9 +29,7 @@ export const Wrapper = styled.nav`
       &:hover {
         bottom: ${theme.spacings.medium};
       }
-    `}
 
-    ${media.lessThan('medium')`
       svg {
         height: ${theme.font.sizes.large};
       }
@@ -46,7 +48,7 @@ type LinkWrapperProps = {
 };
 
 export const LinkWrapper = styled.div<LinkWrapperProps>`
-  ${({ theme, active }) => css`
+  ${({ theme, active = false }) => css`
     cursor: pointer;
     opacity: 0.5;
     transition: all 0.3s ease-in-out;

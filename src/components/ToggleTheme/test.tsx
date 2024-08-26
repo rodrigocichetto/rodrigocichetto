@@ -1,8 +1,8 @@
 import { fireEvent } from '@testing-library/react';
 
-import theme, { light } from 'styles/theme';
+import theme, { light } from '@/styles/theme';
 
-import { renderWithTheme } from 'utils/tests/helpers';
+import { renderWithTheme } from '@/utils/tests/helpers';
 
 import ToggleTheme from '.';
 

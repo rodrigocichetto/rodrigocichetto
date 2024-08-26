@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 
-import { ThemeTypes } from 'types/global';
+import { ThemeTypes } from '@/types/global';
 
 import { ToggleThemeProps } from '.';
 
@@ -63,15 +63,13 @@ export const Input = styled.input`
 `;
 
 const modifiersToggleButton = {
-  dark: () =>
-    css`
-      left: 2.7rem;
-    `,
+  dark: () => css`
+    left: 2.7rem;
+  `,
 
-  light: () =>
-    css`
-      left: 0.5rem;
-    `
+  light: () => css`
+    left: 0.5rem;
+  `
 };
 
 type ToggleButtonProps = WrapperProps;

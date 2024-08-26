@@ -1,8 +1,12 @@
 import styled, { css } from 'styled-components';
+import { ThemeColors, ThemeFontSizes } from '@/types/global';
 
-import { IconProps } from '.';
+type WrapperProps = {
+  size?: ThemeFontSizes;
+  color?: ThemeColors;
+};
 
-export const Wrapper = styled.div<Omit<IconProps, 'icon'>>`
+export const Wrapper = styled.div<Omit<WrapperProps, 'icon'>>`
   ${({ theme, size, color }) => css`
     display: inline-flex;
     color: ${theme.colors[color!]};

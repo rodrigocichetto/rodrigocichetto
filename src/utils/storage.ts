@@ -1,4 +1,4 @@
-import { ThemeTypes } from 'types/global';
+import { ThemeTypes } from '@/types/global';
 
 const STORAGE_THEME = '@RodrigoCichetto:theme';
 
