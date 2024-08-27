@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrodrigocichetto=self.webpackChunkrodrigocichetto||[]).push([[675],{"./messages/pt.json":module=>{module.exports=JSON.parse('{"Home":{"description":"Software Engineer na Qive. Amante do mundo do design e apaixonado pelas melhores tecnologias de desenvolvimento."}}')}}]);
